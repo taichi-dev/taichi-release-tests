@@ -15,6 +15,7 @@ def hook(module):
         @wraps(hookee)
         def real_hooker(*args, **kwargs):
             return hooker(hookee, *args, **kwargs)
+        real_hooker.orig = hookee
         setattr(module, funcname, real_hooker)
         return real_hooker
     return inner

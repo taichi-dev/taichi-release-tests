@@ -17,30 +17,31 @@ LAST_POS = (0.0, 0.0)
 
 @hook(ti.GUI)
 def get_key_event(orig, self):
+    if has_key_event.orig(self):
+        orig(self)  # discard result
+
     if NEXT_EVENTS:
         ev = NEXT_EVENTS.pop(0)
         return ev
 
     assert False, 'Should not reach here!'
 
-    # ev = orig(self)
-    # ev.pos = LAST_POS
-    # return ev
-
-
 
 @hook(ti.GUI)
 def has_key_event(orig, self):
-    return bool(NEXT_EVENTS) # or orig(self)
+    orig(self)  # discard result
+    return bool(NEXT_EVENTS)
 
 
 @hook(ti.GUI)
 def get_cursor_pos(orig, self):
+    orig(self)  # discard result
     return LAST_POS
 
 
 @hook(ti.GUI)
 def is_pressed(orig, self, *keys):
+    orig(self, *keys)  # discard result
     return any(k in PRESSED_KEYS for k in keys)
 
 
