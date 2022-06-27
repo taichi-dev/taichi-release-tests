@@ -6,6 +6,7 @@ authors = ["Proton <feisuzhu@163.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+PyYAML = "^6.0"
 
 [tool.poetry.dev-dependencies]
 
