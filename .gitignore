@@ -2,3 +2,4 @@ taichi
 __pycache__
 repos/*
 !repos/.gitkeep
+imgui.ini

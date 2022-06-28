@@ -3,20 +3,21 @@
 # -- stdlib --
 from pathlib import Path
 import argparse
+import importlib
+import importlib.util
 import logging
 import os
+import sys
 
 # -- third party --
+import taichi as ti
 import yaml
 
 # -- own --
-from utils import logconfig
-import importlib
-import importlib.util
-from exceptions import Success
-from utils.misc import hook
 from actions import ACTIONS
-import taichi as ti
+from exceptions import Success
+from utils import logconfig
+from utils.misc import hook
 
 
 # -- code --
@@ -31,6 +32,7 @@ STATE = {
 }
 
 ACTIVE_GUI = set()
+ACTIVE_GGUI = set()
 
 
 def next_step():
@@ -55,10 +57,7 @@ def run_step(step, dry=False):
     ACTIONS[step['action']](**args)
 
 
-@hook(ti.GUI)
-def show(orig, self, _=None):
-    ACTIVE_GUI.add(self)
-    orig(self)
+def try_run_step(self):
     step = STATE['step']
     if step is None:
         return
@@ -75,6 +74,24 @@ def show(orig, self, _=None):
         next_step()
 
 
+@hook(ti.GUI, 'show')
+def gui_show(orig, self, _=None):
+    ACTIVE_GUI.add(self)
+    orig(self)
+    try_run_step(self)
+
+
+@hook(ti.ui.Window, 'show')
+def ggui_show(orig, self, _=None):
+    ACTIVE_GGUI.add(self)
+    orig(self)
+    self.frame += 1
+    try_run_step(self)
+
+
+ti.ui.Window.frame = 0
+
+
 def run(test):
     log.info('Running %s...', test['path'])
     ti.reset()
@@ -89,14 +106,21 @@ def run(test):
 
     spec = importlib.util.spec_from_file_location('testee', test['path'])
     assert spec
+    assert spec.loader
     module = importlib.util.module_from_spec(spec)
     try:
+        sys.argv = [test['path']] + test['args']
         spec.loader.exec_module(module)
+        if main := getattr(module, 'main', None):
+            main()
     except Success:
         pass
 
     for gui in ACTIVE_GUI:
         gui.close()
+
+    for gui in ACTIVE_GGUI:
+        gui.destroy()
 
 
 def collect_timeline(rst, p):

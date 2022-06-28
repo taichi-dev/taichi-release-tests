@@ -7,14 +7,15 @@ from functools import wraps
 # -- own --
 
 # -- code --
-def hook(module):
+def hook(module, name=None):
     def inner(hooker):
-        funcname = hooker.__name__
+        funcname = name or hooker.__name__
         hookee = getattr(module, funcname)
 
         @wraps(hookee)
         def real_hooker(*args, **kwargs):
             return hooker(hookee, *args, **kwargs)
+        real_hooker.orig = hookee
         real_hooker.orig = hookee
         setattr(module, funcname, real_hooker)
         return real_hooker
