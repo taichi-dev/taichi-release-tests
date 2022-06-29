@@ -2,18 +2,21 @@
 
 # -- stdlib --
 from pathlib import Path
-import argparse
+import random
 import importlib
 import importlib.util
+import numpy as np  # pyright: ignore
+import inspect
 import logging
 import os
 import sys
 
 # -- third party --
-import taichi as ti
+import taichi as ti  # pyright: ignore
 import yaml
 
 # -- own --
+from args import parse_args, options
 from actions import ACTIONS
 from exceptions import Success
 from utils import logconfig
@@ -22,7 +25,7 @@ from utils.misc import hook
 
 # -- code --
 log = logging.getLogger('main')
-options = None
+
 
 STATE = {
     'current_test': None,
@@ -44,17 +47,16 @@ def next_step():
         raise Success
 
 
-def run_step(step, dry=False):
+def run_step(gui, step, dry=False):
     if 'action' not in step:
         raise ValueError('Step %s has no action!', step)
     if step['action'] not in ACTIONS:
         raise ValueError('Unknown action %s!', step['action'])
 
-    args = dict(step)
-    args.pop('action', 0)
-    args.pop('frame', 0)
-    args['dry'] = dry
-    ACTIONS[step['action']](**args)
+    action = ACTIONS[step['action']]
+    args = {**step, 'dry': dry, 'gui': gui}
+    args = {k: v for k, v in args.items() if k in action.params}
+    action(**args)
 
 
 def try_run_step(self):
@@ -70,31 +72,43 @@ def try_run_step(self):
 
     if self.frame >= fr:
         STATE['last_step_frame'] = self.frame
-        run_step(step)
+        run_step(self, step)
         next_step()
 
 
 @hook(ti.GUI, 'show')
 def gui_show(orig, self, _=None):
+    ti.sync()
     ACTIVE_GUI.add(self)
-    orig(self)
     try_run_step(self)
+    orig(self)
 
 
 @hook(ti.ui.Window, 'show')
 def ggui_show(orig, self, _=None):
+    ti.sync()
     ACTIVE_GGUI.add(self)
+    try_run_step(self)
     orig(self)
     self.frame += 1
-    try_run_step(self)
 
 
 ti.ui.Window.frame = 0
 
 
+@hook(ti)
+def init(orig, arch=None, **kwargs):
+    kwargs['random_seed'] = 23333
+    print('hook init')
+    return orig(arch=arch, **kwargs)
+
+
 def run(test):
     log.info('Running %s...', test['path'])
     ti.reset()
+    np.random.seed(23333)
+    random.seed(23333)
+
     STATE['current_test'] = test
     STATE['steps_iter'] = iter(test['steps'])
     STATE['last_step_frame'] = 0
@@ -136,7 +150,7 @@ def collect_timeline(rst, p):
             continue
         else:
             for step in test['steps']:
-                run_step(step, dry=True)
+                run_step(None, step, dry=True)
 
             rst.append(test)
 
@@ -164,12 +178,7 @@ def run_timelines(timelines):
 
 
 def main():
-    global options
-    parser = argparse.ArgumentParser('taichi-release-tests-runner')
-    parser.add_argument('timelines')
-    parser.add_argument('--log', default='INFO')
-    options = parser.parse_args()
-
+    parse_args()
     logconfig.init(getattr(logging, options.log))
 
     run_timelines(options.timelines)
