@@ -62,7 +62,7 @@ def run_step(gui, step, dry=False):
 def try_run_step(self):
     step = STATE['step']
     if step is None:
-        return
+        return False
 
     fr = step['frame']
     if isinstance(fr, str) and fr.startswith('@'):
@@ -70,25 +70,28 @@ def try_run_step(self):
     else:
         fr = STATE['last_step_frame'] + int(fr)
 
-    if self.frame >= fr:
-        STATE['last_step_frame'] = self.frame
-        run_step(self, step)
-        next_step()
+    if self.frame < fr:
+        return False
+
+    STATE['last_step_frame'] = self.frame
+    run_step(self, step)
+    next_step()
+    return True
 
 
 @hook(ti.GUI, 'show')
 def gui_show(orig, self, _=None):
-    ti.sync()
     ACTIVE_GUI.add(self)
-    try_run_step(self)
+    while try_run_step(self):
+        pass
     orig(self)
 
 
 @hook(ti.ui.Window, 'show')
 def ggui_show(orig, self, _=None):
-    ti.sync()
     ACTIVE_GGUI.add(self)
-    try_run_step(self)
+    while try_run_step(self):
+        pass
     orig(self)
     self.frame += 1
 

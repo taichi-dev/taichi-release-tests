@@ -123,6 +123,17 @@ def hook_ggui_events():
         else:
             return False
 
+    class mocked_event:
+        def __init__(self, key):
+            self.key = key
+
+    @hook(ti.ui.Window)
+    def get_events(orig, self, tag=None):
+        orig(self, tag)
+        rst = [mocked_event(e.key) for e in NEXT_EVENTS if tag is None or tag == EV_MAP[e.tag]]
+        NEXT_EVENTS.clear()
+        return rst
+
 
 hook_gui_events()
 hook_ggui_events()
@@ -188,8 +199,6 @@ def move(dry, position):
     assert len(position) == 2
     assert isinstance(position[0], float)
     assert isinstance(position[1], float)
-    assert 0.0 <= position[0] <= 1.0
-    assert 0.0 <= position[1] <= 1.0
 
     position = tuple(position)
 
