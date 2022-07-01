@@ -1,0 +1,6 @@
+---
+- path: repos/taichi/python/taichi/examples/ggui_examples/mass_spring_3d_ggui.py
+  args: []
+  steps:
+  - frame: 120
+    action: succeed

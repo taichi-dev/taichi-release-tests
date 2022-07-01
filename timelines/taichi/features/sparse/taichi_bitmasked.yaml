@@ -1,0 +1,11 @@
+---
+- path: repos/taichi/python/taichi/examples/features/sparse/taichi_bitmasked.py
+  args: []
+  steps:
+  - frame: 30
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 1
+    ground_truth: truths/taichi/features/sparse/taichi_bitmasked.png
+  - frame: 1
+    action: succeed

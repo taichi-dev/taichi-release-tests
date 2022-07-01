@@ -1,0 +1,11 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/mpm3d.py
+  args: []
+  steps:
+  - frame: 300
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: '0.025%'
+    ground_truth: truths/taichi/simulation/mpm3d.png
+  - frame: 1
+    action: succeed

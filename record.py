@@ -3,16 +3,15 @@
 # -- stdlib --
 import argparse
 import random
+import pathlib
 import importlib
 import importlib.util
 import numpy as np  # pyright: ignore
 import logging
-import os
 import sys
 
 # -- third party --
 import taichi as ti  # pyright: ignore
-import yaml
 
 # -- own --
 from utils.misc import hook
@@ -25,17 +24,10 @@ log = logging.getLogger('main')
 @hook(ti)
 def init(orig, arch=None, **kwargs):
     kwargs['random_seed'] = 23333
+    np.random.seed(23333)
+    random.seed(23333)
     return orig(arch=arch, **kwargs)
 
-        # steps:
-        # - frame: 60
-        #     action: move
-        #     position: [0.2, 0.2]
-        # - frame: 0
-        #     action: mouse-down
-        #     key: LMB
-        # - frame: 60
-        #     action: move
 
 LAST_POS = (0, 0)
 LAST_FRAME = 0
@@ -58,6 +50,7 @@ def get_key_event(orig, self):
             f'action: {action}, '
             f'position: [{p[0]:.3}, {p[1]:.3}]}}\n'
         )
+        LAST_FRAME = frame
         return ev
 
     if ev.key in (ti.GUI.LMB, ti.GUI.MMB, ti.GUI.RMB):
@@ -188,11 +181,11 @@ def run(program, args, output):
     global OUTPUT
 
     ti.reset()
-    np.random.seed(23333)
-    random.seed(23333)
+
+    path = pathlib.Path(output)
+    path.parent.mkdir(parents=True, exist_ok=True)
 
     OUTPUT = open(output, 'w')
-
 
     lines = [
         r'---',
@@ -205,14 +198,17 @@ def run(program, args, output):
         OUTPUT.write(l + '\n')
 
 
-    spec = importlib.util.spec_from_file_location('testee', program)
+    spec = importlib.util.spec_from_file_location('__main__', program)
     assert spec
     assert spec.loader
     module = importlib.util.module_from_spec(spec)
     sys.argv = [program] + args
-    spec.loader.exec_module(module)
-    if main := getattr(module, 'main', None):
-        main()
+    try:
+        spec.loader.exec_module(module)
+    except BaseException:
+        pass
+
+    OUTPUT.write('  - {frame: 30, action: succeed}\n')
 
 
 def main():

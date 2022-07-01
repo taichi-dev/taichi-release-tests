@@ -1,0 +1,5 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/ad_gravity.py
+  args: []
+  steps:
+  - {frame: 60, action: succeed}

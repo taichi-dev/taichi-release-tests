@@ -1,0 +1,5 @@
+---
+- path: repos/taichi/python/taichi/examples/ggui_examples/mpm3d_ggui.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}

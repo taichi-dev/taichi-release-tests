@@ -1,0 +1,11 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/vortex_rings.py
+  args: []
+  steps:
+  - frame: 200
+    action: capture-and-compare
+    compare: pixel-count
+    threshold: 1
+    ground_truth: truths/taichi/simulation/vortex_rings.png
+  - frame: 1
+    action: succeed

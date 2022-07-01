@@ -6,12 +6,12 @@ import random
 import importlib
 import importlib.util
 import numpy as np  # pyright: ignore
-import inspect
 import logging
 import os
 import sys
 
 # -- third party --
+import matplotlib.pyplot as plt
 import taichi as ti  # pyright: ignore
 import yaml
 
@@ -29,6 +29,8 @@ log = logging.getLogger('main')
 
 STATE = {
     'current_test': None,
+    'current_module': None,
+    'ensure_compiled_run': False,
     'steps_iter': None,
     'step': None,
     'last_step_frame': 0,
@@ -104,19 +106,49 @@ def ggui_show(orig, self, _=None):
 ti.ui.Window.frame = 0
 
 
+@hook(plt, 'show')
+def plt_show(orig, *args, **kwargs):
+    # special case
+    test = STATE['current_test']
+    step = STATE['step']
+    if step is None:
+        return
+
+    if not step['action'] == 'capture-and-compare':
+        return
+
+    run_step(plt, test, step)
+    next_step()
+    return True
+
+
 @hook(ti)
 def init(orig, arch=None, **kwargs):
     kwargs['random_seed'] = 23333
-    print('hook init')
+    np.random.seed(23333)
+    random.seed(23333)
     return orig(arch=arch, **kwargs)
+
+
+@hook(ti.lang.kernel_impl.Kernel)
+def ensure_compiled(orig, self, *args):
+    if STATE['ensure_compiled_run']:
+        return orig(self, *args)
+
+    STATE['ensure_compiled_run'] = True
+    test = STATE['current_test']
+    mod = STATE['current_module']
+    if 'before_first_kernel' in test:
+        exec(test['before_first_kernel'], mod.__dict__, mod.__dict__)
+
+    return orig(self, *args)
 
 
 def run(test):
     log.info('Running %s...', test['path'])
     ti.reset()
-    np.random.seed(23333)
-    random.seed(23333)
 
+    STATE['ensure_compiled_run'] = False
     STATE['current_test'] = test
     STATE['steps_iter'] = iter(test['steps'])
     STATE['last_step_frame'] = 0
@@ -126,15 +158,15 @@ def run(test):
         if act.startswith('__reset:'):
             ACTIONS[act]()
 
-    spec = importlib.util.spec_from_file_location('testee', test['path'])
+    spec = importlib.util.spec_from_file_location('__main__', test['path'])
     assert spec
     assert spec.loader
     module = importlib.util.module_from_spec(spec)
+    STATE['current_module'] = module
+    sys.argv = [test['path']] + test['args']
+
     try:
-        sys.argv = [test['path']] + test['args']
         spec.loader.exec_module(module)
-        if main := getattr(module, 'main', None):
-            main()
     except Success:
         pass
 
@@ -188,6 +220,8 @@ def run_timelines(timelines):
 def main():
     parse_args()
     logconfig.init(getattr(logging, options.log))
+
+    os.environ['TI_GUI_FAST'] = '0'
 
     run_timelines(options.timelines)
 

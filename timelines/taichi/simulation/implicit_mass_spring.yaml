@@ -1,0 +1,11 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/implicit_mass_spring.py
+  args: []
+  steps:
+  - frame: 150
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 10
+    ground_truth: truths/taichi/simulation/implicit_mass_spring.png
+  - frame: 1
+    action: succeed

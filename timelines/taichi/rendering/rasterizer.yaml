@@ -1,0 +1,12 @@
+---
+- path: repos/taichi/python/taichi/examples/rendering/rasterizer.py
+  args: []
+  steps:
+  - frame: 30
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 50145  # 0.025% color difference
+    threshold: 1
+    ground_truth: truths/taichi/rendering/rasterizer.png
+  - frame: 1
+    action: succeed

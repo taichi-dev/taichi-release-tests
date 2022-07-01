@@ -1,5 +1,8 @@
-taichi
+/taichi
 __pycache__
-repos/*
-!repos/.gitkeep
+/repos/*
+!/repos/.gitkeep
 imgui.ini
+*.ply
+layout.pdf
+results/

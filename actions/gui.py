@@ -130,7 +130,13 @@ def hook_ggui_events():
     @hook(ti.ui.Window)
     def get_events(orig, self, tag=None):
         orig(self, tag)
-        rst = [mocked_event(e.key) for e in NEXT_EVENTS if tag is None or tag == EV_MAP[e.tag]]
+        rst = []
+        for e in NEXT_EVENTS:
+            if e.tag == EventTag.MOTION:
+                continue
+            if tag is None or tag == EV_MAP[e.tag]:
+                rst.append(mocked_event(e.key))
+
         NEXT_EVENTS.clear()
         return rst
 
@@ -182,7 +188,7 @@ def key_up(dry, key, modifiers=[]):
             modifiers=modifiers,
         )
     )
-    PRESSED_KEYS.remove(key)
+    PRESSED_KEYS.discard(key)
 
 
 @register('key-press')

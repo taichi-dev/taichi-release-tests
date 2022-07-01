@@ -1,0 +1,6 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/initial_value_problem.py
+  args: []
+  steps:
+  - frame: 30
+    action: succeed

@@ -1,0 +1,95 @@
+---
+- path: repos/taichi/python/taichi/examples/ggui_examples/mass_spring_game_ggui.py
+  args: []
+  steps:
+  - {frame: 115, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.332, 0.128]}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 25, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.43, 0.111]}
+  - {frame: 5, action: mouse-up, key: LMB}
+  - {frame: 37, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.378, 0.146]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 38, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.282, 0.182]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 23, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.494, 0.133]}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 27, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.573, 0.0996]}
+  - {frame: 5, action: mouse-up, key: LMB}
+  - {frame: 19, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.582, 0.173]}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 20, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.521, 0.197]}
+  - {frame: 5, action: mouse-up, key: LMB}
+  - {frame: 23, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.623, 0.13]}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 27, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.551, 0.0645]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - frame: 5
+    action: poke
+    function: main
+    code: |
+        spring_Y[None] = 200
+        drag_damping[None] = 5
+        dashpot_damping[None] = 100
+  - {frame: 19, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.694, 0.236]}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 17, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.686, 0.102]}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 19, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.666, 0.216]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 18, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.695, 0.132]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 26, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.745, 0.134]}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 27, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.521, 0.288]}
+  - {frame: 8, action: mouse-up, key: LMB}
+  - {frame: 26, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.584, 0.234]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 27, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.588, 0.19]}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 43, action: mouse-down, key: RMB}
+  - {frame: 0, action: move, position: [0.464, 0.413]}
+  - {frame: 22, action: mouse-up, key: RMB}
+  - {frame: 58, action: mouse-down, key: RMB}
+  - {frame: 0, action: move, position: [0.63, 0.409]}
+  - {frame: 2, action: move, position: [0.629, 0.409]}
+  - {frame: 12, action: mouse-up, key: RMB}
+  - {frame: 54, action: mouse-down, key: RMB}
+  - {frame: 0, action: move, position: [0.278, 0.407]}
+  - {frame: 1, action: move, position: [0.275, 0.405]}
+  - {frame: 1, action: move, position: [0.273, 0.403]}
+  - {frame: 1, action: move, position: [0.272, 0.403]}
+  - {frame: 3, action: mouse-up, key: RMB}
+  - {frame: 129, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.396, 0.18]}
+  - {frame: 5, action: mouse-up, key: LMB}
+  - {frame: 11, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.408, 0.236]}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 8, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.366, 0.269]}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - frame: 10
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 50145  # 0.025% color difference
+    threshold: 1
+    ground_truth: truths/taichi/ggui_examples/mass_spring_game_ggui.png
+  - frame: 1
+    action: succeed

@@ -1,0 +1,6 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/odop_solar.py
+  args: []
+  steps:
+  - frame: 60
+    action: succeed

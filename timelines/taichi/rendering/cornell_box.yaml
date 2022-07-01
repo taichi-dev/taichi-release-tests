@@ -1,0 +1,12 @@
+---
+- path: repos/taichi/python/taichi/examples/rendering/cornell_box.py
+  args: []
+  steps:
+  - frame: 300
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 50145  # 0.025% color difference
+    threshold: 1
+    ground_truth: truths/taichi/rendering/cornell_box.png
+  - frame: 1
+    action: succeed

@@ -1,0 +1,11 @@
+---
+- path: repos/taichi/python/taichi/examples/features/sparse/taichi_sparse.py
+  args: []
+  steps:
+  - frame: 45
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 100
+    ground_truth: truths/taichi/features/sparse/taichi_sparse.png
+  - frame: 1
+    action: succeed

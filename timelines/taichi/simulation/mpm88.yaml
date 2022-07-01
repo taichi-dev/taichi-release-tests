@@ -1,0 +1,6 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/mpm88.py
+  args: []
+  steps:
+  - frame: 150
+    action: succeed

@@ -1,0 +1,11 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/fem99.py
+  args: []
+  steps:
+  - frame: 60
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 1000
+    ground_truth: truths/taichi/simulation/fem99.png
+  - frame: 1
+    action: succeed

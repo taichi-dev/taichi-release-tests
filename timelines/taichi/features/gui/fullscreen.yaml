@@ -1,0 +1,5 @@
+---
+- path: repos/taichi/python/taichi/examples/features/gui/fullscreen.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}

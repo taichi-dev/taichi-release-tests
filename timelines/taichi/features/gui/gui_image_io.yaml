@@ -1,0 +1,5 @@
+---
+- path: repos/taichi/python/taichi/examples/features/gui/gui_image_io.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}

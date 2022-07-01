@@ -1,0 +1,11 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/comet.py
+  args: []
+  steps:
+  - frame: 150
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 1000
+    ground_truth: truths/taichi/simulation/comet.png
+  - frame: 1
+    action: succeed

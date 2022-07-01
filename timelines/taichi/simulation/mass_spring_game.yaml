@@ -1,0 +1,805 @@
+---
+- path: repos/taichi/python/taichi/examples/simulation/mass_spring_game.py
+  args: []
+  steps:
+  - {frame: 2, action: move, position: [1.31, 0.637]}
+  - {frame: 0, action: move, position: [1.32, 0.635]}
+  - {frame: 0, action: move, position: [1.33, 0.635]}
+  - {frame: 1, action: move, position: [1.33, 0.633]}
+  - {frame: 1, action: move, position: [1.34, 0.633]}
+  - {frame: 38, action: move, position: [0.934, 0.15]}
+  - {frame: 1, action: move, position: [0.863, 0.17]}
+  - {frame: 0, action: move, position: [0.824, 0.182]}
+  - {frame: 1, action: move, position: [0.766, 0.193]}
+  - {frame: 0, action: move, position: [0.744, 0.197]}
+  - {frame: 1, action: move, position: [0.736, 0.197]}
+  - {frame: 0, action: move, position: [0.734, 0.197]}
+  - {frame: 0, action: move, position: [0.732, 0.197]}
+  - {frame: 1, action: move, position: [0.732, 0.195]}
+  - {frame: 0, action: move, position: [0.73, 0.193]}
+  - {frame: 1, action: move, position: [0.729, 0.189]}
+  - {frame: 0, action: move, position: [0.727, 0.186]}
+  - {frame: 1, action: move, position: [0.725, 0.18]}
+  - {frame: 0, action: move, position: [0.721, 0.176]}
+  - {frame: 1, action: move, position: [0.717, 0.174]}
+  - {frame: 0, action: move, position: [0.711, 0.172]}
+  - {frame: 1, action: move, position: [0.705, 0.168]}
+  - {frame: 0, action: move, position: [0.697, 0.164]}
+  - {frame: 1, action: move, position: [0.689, 0.162]}
+  - {frame: 0, action: move, position: [0.686, 0.16]}
+  - {frame: 1, action: move, position: [0.678, 0.156]}
+  - {frame: 0, action: move, position: [0.674, 0.152]}
+  - {frame: 1, action: move, position: [0.67, 0.15]}
+  - {frame: 0, action: move, position: [0.666, 0.148]}
+  - {frame: 1, action: move, position: [0.662, 0.146]}
+  - {frame: 0, action: move, position: [0.656, 0.145]}
+  - {frame: 1, action: move, position: [0.652, 0.143]}
+  - {frame: 0, action: move, position: [0.643, 0.141]}
+  - {frame: 1, action: move, position: [0.629, 0.137]}
+  - {frame: 0, action: move, position: [0.613, 0.135]}
+  - {frame: 1, action: move, position: [0.594, 0.135]}
+  - {frame: 0, action: move, position: [0.564, 0.129]}
+  - {frame: 0, action: move, position: [0.533, 0.125]}
+  - {frame: 1, action: move, position: [0.5, 0.121]}
+  - {frame: 1, action: move, position: [0.49, 0.121]}
+  - {frame: 0, action: move, position: [0.469, 0.119]}
+  - {frame: 1, action: move, position: [0.447, 0.115]}
+  - {frame: 0, action: move, position: [0.43, 0.115]}
+  - {frame: 0, action: move, position: [0.42, 0.113]}
+  - {frame: 1, action: move, position: [0.416, 0.113]}
+  - {frame: 4, action: move, position: [0.414, 0.113]}
+  - {frame: 0, action: move, position: [0.412, 0.113]}
+  - {frame: 1, action: move, position: [0.41, 0.113]}
+  - {frame: 4, action: mouse-down, key: LMB}
+  - {frame: 5, action: move, position: [0.412, 0.113]}
+  - {frame: 1, action: move, position: [0.412, 0.115]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.418, 0.117]}
+  - {frame: 1, action: move, position: [0.42, 0.119]}
+  - {frame: 0, action: move, position: [0.426, 0.121]}
+  - {frame: 1, action: move, position: [0.43, 0.123]}
+  - {frame: 0, action: move, position: [0.438, 0.125]}
+  - {frame: 1, action: move, position: [0.447, 0.127]}
+  - {frame: 0, action: move, position: [0.451, 0.129]}
+  - {frame: 1, action: move, position: [0.455, 0.129]}
+  - {frame: 0, action: move, position: [0.463, 0.133]}
+  - {frame: 1, action: move, position: [0.467, 0.133]}
+  - {frame: 0, action: move, position: [0.475, 0.133]}
+  - {frame: 0, action: move, position: [0.479, 0.133]}
+  - {frame: 1, action: move, position: [0.486, 0.133]}
+  - {frame: 0, action: move, position: [0.492, 0.133]}
+  - {frame: 1, action: move, position: [0.496, 0.133]}
+  - {frame: 0, action: move, position: [0.504, 0.133]}
+  - {frame: 1, action: move, position: [0.508, 0.133]}
+  - {frame: 0, action: move, position: [0.512, 0.131]}
+  - {frame: 1, action: move, position: [0.516, 0.129]}
+  - {frame: 0, action: move, position: [0.518, 0.127]}
+  - {frame: 1, action: move, position: [0.523, 0.121]}
+  - {frame: 0, action: move, position: [0.525, 0.119]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.529, 0.119]}
+  - {frame: 0, action: move, position: [0.531, 0.117]}
+  - {frame: 1, action: move, position: [0.531, 0.115]}
+  - {frame: 2, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.533, 0.115]}
+  - {frame: 1, action: move, position: [0.537, 0.113]}
+  - {frame: 0, action: move, position: [0.541, 0.109]}
+  - {frame: 1, action: move, position: [0.547, 0.102]}
+  - {frame: 0, action: move, position: [0.553, 0.0977]}
+  - {frame: 1, action: move, position: [0.561, 0.0918]}
+  - {frame: 0, action: move, position: [0.562, 0.0879]}
+  - {frame: 1, action: move, position: [0.568, 0.082]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.57, 0.0781]}
+  - {frame: 1, action: move, position: [0.572, 0.0742]}
+  - {frame: 2, action: move, position: [0.572, 0.0723]}
+  - {frame: 1, action: move, position: [0.572, 0.0703]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.572, 0.0684]}
+  - {frame: 1, action: move, position: [0.57, 0.0645]}
+  - {frame: 0, action: move, position: [0.57, 0.0605]}
+  - {frame: 1, action: move, position: [0.568, 0.0527]}
+  - {frame: 0, action: move, position: [0.566, 0.0488]}
+  - {frame: 1, action: move, position: [0.564, 0.041]}
+  - {frame: 0, action: move, position: [0.564, 0.0371]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.564, 0.0312]}
+  - {frame: 0, action: move, position: [0.562, 0.0293]}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 3, action: move, position: [0.564, 0.0293]}
+  - {frame: 1, action: move, position: [0.566, 0.0312]}
+  - {frame: 0, action: move, position: [0.572, 0.0371]}
+  - {frame: 0, action: move, position: [0.58, 0.043]}
+  - {frame: 1, action: move, position: [0.584, 0.0469]}
+  - {frame: 0, action: move, position: [0.594, 0.0527]}
+  - {frame: 1, action: move, position: [0.604, 0.0645]}
+  - {frame: 0, action: move, position: [0.605, 0.0664]}
+  - {frame: 1, action: move, position: [0.611, 0.0723]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.613, 0.0742]}
+  - {frame: 1, action: move, position: [0.615, 0.0781]}
+  - {frame: 1, action: move, position: [0.617, 0.0801]}
+  - {frame: 0, action: move, position: [0.617, 0.082]}
+  - {frame: 1, action: move, position: [0.617, 0.084]}
+  - {frame: 0, action: move, position: [0.617, 0.0898]}
+  - {frame: 1, action: move, position: [0.617, 0.0918]}
+  - {frame: 0, action: move, position: [0.617, 0.0938]}
+  - {frame: 1, action: move, position: [0.617, 0.102]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.619, 0.105]}
+  - {frame: 1, action: move, position: [0.621, 0.115]}
+  - {frame: 0, action: move, position: [0.621, 0.123]}
+  - {frame: 1, action: move, position: [0.621, 0.137]}
+  - {frame: 0, action: move, position: [0.621, 0.139]}
+  - {frame: 1, action: move, position: [0.621, 0.143]}
+  - {frame: 0, action: move, position: [0.619, 0.148]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.617, 0.15]}
+  - {frame: 0, action: move, position: [0.615, 0.154]}
+  - {frame: 0, action: move, position: [0.609, 0.162]}
+  - {frame: 1, action: move, position: [0.605, 0.166]}
+  - {frame: 0, action: move, position: [0.602, 0.17]}
+  - {frame: 1, action: move, position: [0.582, 0.188]}
+  - {frame: 0, action: move, position: [0.57, 0.193]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.562, 0.199]}
+  - {frame: 0, action: move, position: [0.549, 0.207]}
+  - {frame: 1, action: move, position: [0.525, 0.219]}
+  - {frame: 0, action: move, position: [0.514, 0.225]}
+  - {frame: 1, action: move, position: [0.508, 0.227]}
+  - {frame: 0, action: move, position: [0.496, 0.232]}
+  - {frame: 1, action: move, position: [0.494, 0.232]}
+  - {frame: 0, action: move, position: [0.492, 0.234]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.49, 0.234]}
+  - {frame: 1, action: move, position: [0.49, 0.236]}
+  - {frame: 0, action: move, position: [0.488, 0.236]}
+  - {frame: 1, action: move, position: [0.486, 0.238]}
+  - {frame: 0, action: move, position: [0.482, 0.24]}
+  - {frame: 1, action: move, position: [0.48, 0.242]}
+  - {frame: 0, action: move, position: [0.475, 0.242]}
+  - {frame: 1, action: move, position: [0.471, 0.244]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.463, 0.246]}
+  - {frame: 1, action: move, position: [0.461, 0.246]}
+  - {frame: 0, action: move, position: [0.455, 0.248]}
+  - {frame: 1, action: move, position: [0.451, 0.248]}
+  - {frame: 0, action: move, position: [0.449, 0.248]}
+  - {frame: 1, action: move, position: [0.447, 0.248]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.445, 0.248]}
+  - {frame: 1, action: move, position: [0.443, 0.248]}
+  - {frame: 0, action: move, position: [0.441, 0.248]}
+  - {frame: 0, action: move, position: [0.439, 0.248]}
+  - {frame: 1, action: move, position: [0.436, 0.248]}
+  - {frame: 0, action: move, position: [0.432, 0.248]}
+  - {frame: 1, action: move, position: [0.428, 0.248]}
+  - {frame: 0, action: move, position: [0.414, 0.248]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.406, 0.248]}
+  - {frame: 0, action: move, position: [0.398, 0.248]}
+  - {frame: 1, action: move, position: [0.385, 0.248]}
+  - {frame: 0, action: move, position: [0.377, 0.246]}
+  - {frame: 1, action: move, position: [0.371, 0.244]}
+  - {frame: 0, action: move, position: [0.355, 0.234]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.348, 0.232]}
+  - {frame: 0, action: move, position: [0.344, 0.23]}
+  - {frame: 1, action: move, position: [0.338, 0.229]}
+  - {frame: 0, action: move, position: [0.334, 0.227]}
+  - {frame: 1, action: move, position: [0.328, 0.223]}
+  - {frame: 0, action: move, position: [0.324, 0.223]}
+  - {frame: 1, action: move, position: [0.32, 0.221]}
+  - {frame: 0, action: move, position: [0.309, 0.219]}
+  - {frame: 1, action: move, position: [0.303, 0.217]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.295, 0.215]}
+  - {frame: 1, action: move, position: [0.291, 0.215]}
+  - {frame: 0, action: move, position: [0.281, 0.213]}
+  - {frame: 1, action: move, position: [0.279, 0.211]}
+  - {frame: 0, action: move, position: [0.275, 0.209]}
+  - {frame: 1, action: move, position: [0.273, 0.207]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.271, 0.207]}
+  - {frame: 1, action: move, position: [0.271, 0.205]}
+  - {frame: 0, action: move, position: [0.27, 0.205]}
+  - {frame: 1, action: move, position: [0.268, 0.205]}
+  - {frame: 0, action: move, position: [0.266, 0.203]}
+  - {frame: 1, action: move, position: [0.262, 0.201]}
+  - {frame: 0, action: move, position: [0.26, 0.201]}
+  - {frame: 1, action: move, position: [0.258, 0.199]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.254, 0.199]}
+  - {frame: 1, action: move, position: [0.25, 0.195]}
+  - {frame: 0, action: move, position: [0.248, 0.193]}
+  - {frame: 1, action: move, position: [0.248, 0.191]}
+  - {frame: 0, action: move, position: [0.246, 0.191]}
+  - {frame: 1, action: move, position: [0.246, 0.189]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 3, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.248, 0.189]}
+  - {frame: 0, action: move, position: [0.25, 0.189]}
+  - {frame: 1, action: move, position: [0.262, 0.189]}
+  - {frame: 0, action: move, position: [0.266, 0.191]}
+  - {frame: 1, action: move, position: [0.271, 0.193]}
+  - {frame: 0, action: move, position: [0.279, 0.197]}
+  - {frame: 1, action: move, position: [0.291, 0.201]}
+  - {frame: 0, action: move, position: [0.305, 0.205]}
+  - {frame: 1, action: move, position: [0.328, 0.213]}
+  - {frame: 0, action: move, position: [0.35, 0.223]}
+  - {frame: 1, action: move, position: [0.381, 0.232]}
+  - {frame: 0, action: move, position: [0.414, 0.248]}
+  - {frame: 1, action: move, position: [0.443, 0.258]}
+  - {frame: 0, action: move, position: [0.488, 0.273]}
+  - {frame: 0, action: move, position: [0.506, 0.277]}
+  - {frame: 1, action: move, position: [0.523, 0.283]}
+  - {frame: 0, action: move, position: [0.539, 0.283]}
+  - {frame: 1, action: move, position: [0.543, 0.285]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 3, action: move, position: [0.545, 0.285]}
+  - {frame: 1, action: move, position: [0.547, 0.283]}
+  - {frame: 0, action: move, position: [0.553, 0.281]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.561, 0.279]}
+  - {frame: 0, action: move, position: [0.572, 0.273]}
+  - {frame: 1, action: move, position: [0.588, 0.271]}
+  - {frame: 0, action: move, position: [0.604, 0.266]}
+  - {frame: 1, action: move, position: [0.617, 0.264]}
+  - {frame: 0, action: move, position: [0.627, 0.258]}
+  - {frame: 1, action: move, position: [0.629, 0.256]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.631, 0.256]}
+  - {frame: 3, action: move, position: [0.633, 0.256]}
+  - {frame: 1, action: move, position: [0.635, 0.254]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.639, 0.254]}
+  - {frame: 1, action: move, position: [0.645, 0.25]}
+  - {frame: 0, action: move, position: [0.656, 0.244]}
+  - {frame: 0, action: move, position: [0.666, 0.242]}
+  - {frame: 1, action: move, position: [0.674, 0.238]}
+  - {frame: 0, action: move, position: [0.682, 0.232]}
+  - {frame: 1, action: move, position: [0.684, 0.23]}
+  - {frame: 0, action: move, position: [0.686, 0.227]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.688, 0.225]}
+  - {frame: 0, action: move, position: [0.688, 0.223]}
+  - {frame: 1, action: move, position: [0.688, 0.221]}
+  - {frame: 1, action: move, position: [0.688, 0.219]}
+  - {frame: 1, action: move, position: [0.686, 0.219]}
+  - {frame: 1, action: move, position: [0.686, 0.217]}
+  - {frame: 0, action: move, position: [0.684, 0.213]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.68, 0.211]}
+  - {frame: 0, action: move, position: [0.678, 0.209]}
+  - {frame: 1, action: move, position: [0.674, 0.205]}
+  - {frame: 0, action: move, position: [0.67, 0.203]}
+  - {frame: 1, action: move, position: [0.668, 0.199]}
+  - {frame: 0, action: move, position: [0.662, 0.195]}
+  - {frame: 1, action: move, position: [0.658, 0.193]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.648, 0.188]}
+  - {frame: 1, action: move, position: [0.645, 0.188]}
+  - {frame: 0, action: move, position: [0.635, 0.186]}
+  - {frame: 1, action: move, position: [0.631, 0.186]}
+  - {frame: 0, action: move, position: [0.617, 0.186]}
+  - {frame: 1, action: move, position: [0.607, 0.186]}
+  - {frame: 0, action: move, position: [0.586, 0.189]}
+  - {frame: 0, action: move, position: [0.555, 0.193]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.523, 0.195]}
+  - {frame: 0, action: move, position: [0.492, 0.199]}
+  - {frame: 1, action: move, position: [0.461, 0.203]}
+  - {frame: 0, action: move, position: [0.441, 0.209]}
+  - {frame: 1, action: move, position: [0.418, 0.213]}
+  - {frame: 0, action: move, position: [0.406, 0.213]}
+  - {frame: 1, action: move, position: [0.395, 0.215]}
+  - {frame: 0, action: move, position: [0.389, 0.217]}
+  - {frame: 1, action: move, position: [0.387, 0.217]}
+  - {frame: 0, action: move, position: [0.385, 0.219]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.383, 0.219]}
+  - {frame: 0, action: move, position: [0.381, 0.221]}
+  - {frame: 1, action: move, position: [0.379, 0.223]}
+  - {frame: 0, action: move, position: [0.373, 0.227]}
+  - {frame: 1, action: move, position: [0.365, 0.23]}
+  - {frame: 0, action: move, position: [0.359, 0.234]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.354, 0.238]}
+  - {frame: 0, action: move, position: [0.35, 0.242]}
+  - {frame: 1, action: move, position: [0.346, 0.244]}
+  - {frame: 0, action: move, position: [0.342, 0.244]}
+  - {frame: 1, action: move, position: [0.342, 0.246]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 3, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.34, 0.246]}
+  - {frame: 1, action: move, position: [0.338, 0.246]}
+  - {frame: 0, action: move, position: [0.336, 0.246]}
+  - {frame: 0, action: move, position: [0.334, 0.246]}
+  - {frame: 1, action: move, position: [0.334, 0.244]}
+  - {frame: 0, action: move, position: [0.332, 0.244]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.33, 0.242]}
+  - {frame: 0, action: move, position: [0.328, 0.24]}
+  - {frame: 1, action: move, position: [0.326, 0.24]}
+  - {frame: 0, action: move, position: [0.326, 0.238]}
+  - {frame: 1, action: move, position: [0.324, 0.238]}
+  - {frame: 0, action: move, position: [0.322, 0.236]}
+  - {frame: 1, action: move, position: [0.32, 0.234]}
+  - {frame: 0, action: move, position: [0.318, 0.234]}
+  - {frame: 1, action: move, position: [0.314, 0.232]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.311, 0.23]}
+  - {frame: 1, action: move, position: [0.309, 0.229]}
+  - {frame: 0, action: move, position: [0.307, 0.229]}
+  - {frame: 1, action: move, position: [0.305, 0.227]}
+  - {frame: 1, action: move, position: [0.303, 0.227]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.305, 0.227]}
+  - {frame: 0, action: move, position: [0.307, 0.227]}
+  - {frame: 1, action: move, position: [0.312, 0.227]}
+  - {frame: 0, action: move, position: [0.32, 0.227]}
+  - {frame: 1, action: move, position: [0.338, 0.232]}
+  - {frame: 0, action: move, position: [0.359, 0.238]}
+  - {frame: 1, action: move, position: [0.375, 0.244]}
+  - {frame: 0, action: move, position: [0.396, 0.25]}
+  - {frame: 1, action: move, position: [0.426, 0.256]}
+  - {frame: 0, action: move, position: [0.457, 0.268]}
+  - {frame: 1, action: move, position: [0.49, 0.273]}
+  - {frame: 0, action: move, position: [0.518, 0.285]}
+  - {frame: 1, action: move, position: [0.537, 0.291]}
+  - {frame: 0, action: move, position: [0.551, 0.297]}
+  - {frame: 1, action: move, position: [0.561, 0.301]}
+  - {frame: 0, action: move, position: [0.568, 0.305]}
+  - {frame: 1, action: move, position: [0.574, 0.305]}
+  - {frame: 0, action: move, position: [0.576, 0.307]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 2, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.576, 0.305]}
+  - {frame: 1, action: move, position: [0.576, 0.303]}
+  - {frame: 0, action: move, position: [0.576, 0.301]}
+  - {frame: 1, action: move, position: [0.576, 0.299]}
+  - {frame: 0, action: move, position: [0.574, 0.297]}
+  - {frame: 1, action: move, position: [0.574, 0.295]}
+  - {frame: 0, action: move, position: [0.574, 0.293]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.572, 0.291]}
+  - {frame: 0, action: move, position: [0.57, 0.289]}
+  - {frame: 1, action: move, position: [0.568, 0.287]}
+  - {frame: 0, action: move, position: [0.566, 0.285]}
+  - {frame: 1, action: move, position: [0.564, 0.283]}
+  - {frame: 0, action: move, position: [0.562, 0.283]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.559, 0.281]}
+  - {frame: 0, action: move, position: [0.553, 0.277]}
+  - {frame: 1, action: move, position: [0.551, 0.277]}
+  - {frame: 0, action: move, position: [0.545, 0.275]}
+  - {frame: 1, action: move, position: [0.543, 0.273]}
+  - {frame: 0, action: move, position: [0.541, 0.271]}
+  - {frame: 1, action: move, position: [0.539, 0.271]}
+  - {frame: 0, action: move, position: [0.539, 0.27]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.537, 0.27]}
+  - {frame: 2, action: move, position: [0.533, 0.27]}
+  - {frame: 1, action: move, position: [0.529, 0.27]}
+  - {frame: 0, action: move, position: [0.525, 0.27]}
+  - {frame: 0, action: move, position: [0.514, 0.27]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.498, 0.271]}
+  - {frame: 0, action: move, position: [0.461, 0.277]}
+  - {frame: 1, action: move, position: [0.428, 0.285]}
+  - {frame: 0, action: move, position: [0.385, 0.297]}
+  - {frame: 1, action: move, position: [0.361, 0.305]}
+  - {frame: 0, action: move, position: [0.322, 0.314]}
+  - {frame: 1, action: move, position: [0.287, 0.322]}
+  - {frame: 0, action: move, position: [0.271, 0.328]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.262, 0.332]}
+  - {frame: 0, action: move, position: [0.254, 0.336]}
+  - {frame: 1, action: move, position: [0.25, 0.338]}
+  - {frame: 0, action: move, position: [0.248, 0.338]}
+  - {frame: 1, action: move, position: [0.246, 0.34]}
+  - {frame: 0, action: move, position: [0.246, 0.342]}
+  - {frame: 1, action: move, position: [0.244, 0.342]}
+  - {frame: 0, action: move, position: [0.242, 0.344]}
+  - {frame: 1, action: move, position: [0.24, 0.344]}
+  - {frame: 0, action: move, position: [0.236, 0.344]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.232, 0.344]}
+  - {frame: 0, action: move, position: [0.23, 0.346]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.23, 0.344]}
+  - {frame: 3, action: mouse-down, key: LMB}
+  - {frame: 5, action: mouse-up, key: LMB}
+  - {frame: 2, action: move, position: [0.229, 0.344]}
+  - {frame: 0, action: move, position: [0.229, 0.346]}
+  - {frame: 1, action: move, position: [0.229, 0.348]}
+  - {frame: 1, action: move, position: [0.229, 0.35]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.229, 0.352]}
+  - {frame: 0, action: move, position: [0.229, 0.354]}
+  - {frame: 1, action: move, position: [0.229, 0.355]}
+  - {frame: 0, action: move, position: [0.229, 0.357]}
+  - {frame: 1, action: move, position: [0.229, 0.359]}
+  - {frame: 0, action: move, position: [0.229, 0.361]}
+  - {frame: 1, action: move, position: [0.232, 0.365]}
+  - {frame: 0, action: move, position: [0.24, 0.369]}
+  - {frame: 1, action: move, position: [0.246, 0.373]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.254, 0.375]}
+  - {frame: 1, action: move, position: [0.271, 0.377]}
+  - {frame: 0, action: move, position: [0.281, 0.381]}
+  - {frame: 1, action: move, position: [0.301, 0.381]}
+  - {frame: 0, action: move, position: [0.311, 0.381]}
+  - {frame: 1, action: move, position: [0.322, 0.381]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.334, 0.381]}
+  - {frame: 1, action: move, position: [0.34, 0.379]}
+  - {frame: 0, action: move, position: [0.344, 0.377]}
+  - {frame: 1, action: move, position: [0.35, 0.377]}
+  - {frame: 0, action: move, position: [0.354, 0.375]}
+  - {frame: 1, action: move, position: [0.363, 0.371]}
+  - {frame: 0, action: move, position: [0.371, 0.363]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.381, 0.355]}
+  - {frame: 1, action: move, position: [0.387, 0.352]}
+  - {frame: 1, action: move, position: [0.4, 0.342]}
+  - {frame: 0, action: move, position: [0.416, 0.33]}
+  - {frame: 0, action: move, position: [0.422, 0.324]}
+  - {frame: 1, action: move, position: [0.438, 0.314]}
+  - {frame: 0, action: move, position: [0.449, 0.303]}
+  - {frame: 1, action: move, position: [0.451, 0.299]}
+  - {frame: 1, action: move, position: [0.455, 0.293]}
+  - {frame: 0, action: move, position: [0.457, 0.291]}
+  - {frame: 0, action: move, position: [0.457, 0.285]}
+  - {frame: 1, action: move, position: [0.457, 0.279]}
+  - {frame: 0, action: move, position: [0.457, 0.275]}
+  - {frame: 1, action: move, position: [0.455, 0.27]}
+  - {frame: 0, action: move, position: [0.453, 0.264]}
+  - {frame: 1, action: move, position: [0.451, 0.254]}
+  - {frame: 0, action: move, position: [0.451, 0.248]}
+  - {frame: 1, action: move, position: [0.451, 0.242]}
+  - {frame: 0, action: move, position: [0.449, 0.232]}
+  - {frame: 1, action: move, position: [0.449, 0.229]}
+  - {frame: 0, action: move, position: [0.449, 0.217]}
+  - {frame: 1, action: move, position: [0.449, 0.211]}
+  - {frame: 0, action: move, position: [0.449, 0.207]}
+  - {frame: 1, action: move, position: [0.449, 0.199]}
+  - {frame: 0, action: move, position: [0.451, 0.195]}
+  - {frame: 1, action: move, position: [0.453, 0.189]}
+  - {frame: 0, action: move, position: [0.453, 0.188]}
+  - {frame: 1, action: move, position: [0.453, 0.186]}
+  - {frame: 0, action: move, position: [0.455, 0.182]}
+  - {frame: 1, action: move, position: [0.455, 0.18]}
+  - {frame: 0, action: move, position: [0.457, 0.178]}
+  - {frame: 1, action: move, position: [0.457, 0.176]}
+  - {frame: 0, action: move, position: [0.457, 0.172]}
+  - {frame: 1, action: move, position: [0.459, 0.168]}
+  - {frame: 0, action: move, position: [0.459, 0.162]}
+  - {frame: 0, action: move, position: [0.461, 0.156]}
+  - {frame: 1, action: move, position: [0.463, 0.15]}
+  - {frame: 0, action: move, position: [0.465, 0.145]}
+  - {frame: 1, action: move, position: [0.467, 0.139]}
+  - {frame: 0, action: move, position: [0.467, 0.133]}
+  - {frame: 1, action: move, position: [0.467, 0.131]}
+  - {frame: 0, action: move, position: [0.469, 0.129]}
+  - {frame: 1, action: move, position: [0.469, 0.127]}
+  - {frame: 3, action: move, position: [0.469, 0.125]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 3, action: move, position: [0.467, 0.133]}
+  - {frame: 1, action: move, position: [0.465, 0.145]}
+  - {frame: 0, action: move, position: [0.459, 0.172]}
+  - {frame: 1, action: move, position: [0.455, 0.195]}
+  - {frame: 0, action: move, position: [0.449, 0.217]}
+  - {frame: 1, action: move, position: [0.445, 0.246]}
+  - {frame: 0, action: move, position: [0.443, 0.273]}
+  - {frame: 1, action: move, position: [0.436, 0.299]}
+  - {frame: 0, action: move, position: [0.436, 0.312]}
+  - {frame: 1, action: move, position: [0.434, 0.336]}
+  - {frame: 0, action: move, position: [0.43, 0.35]}
+  - {frame: 1, action: move, position: [0.43, 0.357]}
+  - {frame: 0, action: move, position: [0.428, 0.363]}
+  - {frame: 1, action: move, position: [0.428, 0.369]}
+  - {frame: 0, action: move, position: [0.428, 0.371]}
+  - {frame: 1, action: move, position: [0.428, 0.373]}
+  - {frame: 15, action: move, position: [0.428, 0.371]}
+  - {frame: 0, action: move, position: [0.428, 0.367]}
+  - {frame: 1, action: move, position: [0.428, 0.365]}
+  - {frame: 0, action: move, position: [0.428, 0.359]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.43, 0.348]}
+  - {frame: 1, action: move, position: [0.43, 0.342]}
+  - {frame: 0, action: move, position: [0.432, 0.334]}
+  - {frame: 1, action: move, position: [0.432, 0.324]}
+  - {frame: 0, action: move, position: [0.434, 0.318]}
+  - {frame: 1, action: move, position: [0.436, 0.312]}
+  - {frame: 0, action: move, position: [0.438, 0.307]}
+  - {frame: 1, action: move, position: [0.438, 0.303]}
+  - {frame: 0, action: move, position: [0.439, 0.297]}
+  - {frame: 1, action: move, position: [0.441, 0.295]}
+  - {frame: 0, action: move, position: [0.443, 0.293]}
+  - {frame: 1, action: move, position: [0.445, 0.291]}
+  - {frame: 0, action: move, position: [0.445, 0.289]}
+  - {frame: 2, action: move, position: [0.447, 0.287]}
+  - {frame: 0, action: move, position: [0.447, 0.285]}
+  - {frame: 1, action: move, position: [0.447, 0.283]}
+  - {frame: 0, action: move, position: [0.449, 0.283]}
+  - {frame: 1, action: move, position: [0.449, 0.281]}
+  - {frame: 0, action: move, position: [0.449, 0.279]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.451, 0.277]}
+  - {frame: 1, action: move, position: [0.451, 0.275]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 8, action: move, position: [0.453, 0.275]}
+  - {frame: 0, action: move, position: [0.455, 0.273]}
+  - {frame: 1, action: move, position: [0.457, 0.273]}
+  - {frame: 0, action: move, position: [0.459, 0.271]}
+  - {frame: 1, action: move, position: [0.463, 0.27]}
+  - {frame: 0, action: move, position: [0.467, 0.268]}
+  - {frame: 1, action: move, position: [0.471, 0.266]}
+  - {frame: 0, action: move, position: [0.479, 0.264]}
+  - {frame: 1, action: move, position: [0.482, 0.262]}
+  - {frame: 0, action: move, position: [0.486, 0.262]}
+  - {frame: 1, action: move, position: [0.488, 0.26]}
+  - {frame: 0, action: move, position: [0.494, 0.26]}
+  - {frame: 1, action: move, position: [0.496, 0.258]}
+  - {frame: 0, action: move, position: [0.498, 0.258]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 6, action: move, position: [0.502, 0.256]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.506, 0.252]}
+  - {frame: 0, action: move, position: [0.51, 0.25]}
+  - {frame: 0, action: move, position: [0.514, 0.246]}
+  - {frame: 1, action: move, position: [0.521, 0.244]}
+  - {frame: 0, action: move, position: [0.531, 0.242]}
+  - {frame: 1, action: move, position: [0.537, 0.24]}
+  - {frame: 0, action: move, position: [0.543, 0.238]}
+  - {frame: 1, action: move, position: [0.549, 0.238]}
+  - {frame: 0, action: move, position: [0.553, 0.236]}
+  - {frame: 1, action: move, position: [0.557, 0.236]}
+  - {frame: 0, action: move, position: [0.559, 0.236]}
+  - {frame: 1, action: move, position: [0.561, 0.236]}
+  - {frame: 0, action: move, position: [0.562, 0.236]}
+  - {frame: 1, action: move, position: [0.564, 0.236]}
+  - {frame: 0, action: move, position: [0.566, 0.236]}
+  - {frame: 1, action: move, position: [0.568, 0.236]}
+  - {frame: 0, action: move, position: [0.57, 0.236]}
+  - {frame: 1, action: move, position: [0.572, 0.236]}
+  - {frame: 0, action: move, position: [0.574, 0.236]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.576, 0.236]}
+  - {frame: 0, action: move, position: [0.578, 0.236]}
+  - {frame: 1, action: move, position: [0.58, 0.236]}
+  - {frame: 1, action: move, position: [0.582, 0.236]}
+  - {frame: 0, action: move, position: [0.584, 0.236]}
+  - {frame: 1, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.588, 0.236]}
+  - {frame: 0, action: move, position: [0.59, 0.236]}
+  - {frame: 1, action: move, position: [0.592, 0.236]}
+  - {frame: 0, action: move, position: [0.594, 0.236]}
+  - {frame: 2, action: move, position: [0.596, 0.236]}
+  - {frame: 4, action: move, position: [0.598, 0.236]}
+  - {frame: 0, action: move, position: [0.6, 0.236]}
+  - {frame: 1, action: move, position: [0.602, 0.236]}
+  - {frame: 1, action: move, position: [0.604, 0.236]}
+  - {frame: 0, action: move, position: [0.605, 0.236]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.605, 0.234]}
+  - {frame: 3, action: move, position: [0.607, 0.234]}
+  - {frame: 1, action: move, position: [0.609, 0.234]}
+  - {frame: 0, action: move, position: [0.611, 0.232]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.619, 0.229]}
+  - {frame: 0, action: move, position: [0.623, 0.227]}
+  - {frame: 1, action: move, position: [0.637, 0.221]}
+  - {frame: 0, action: move, position: [0.641, 0.219]}
+  - {frame: 1, action: move, position: [0.646, 0.217]}
+  - {frame: 0, action: move, position: [0.656, 0.213]}
+  - {frame: 1, action: move, position: [0.66, 0.211]}
+  - {frame: 0, action: move, position: [0.662, 0.209]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.664, 0.207]}
+  - {frame: 0, action: move, position: [0.666, 0.205]}
+  - {frame: 1, action: move, position: [0.668, 0.205]}
+  - {frame: 2, action: move, position: [0.668, 0.203]}
+  - {frame: 0, action: move, position: [0.67, 0.201]}
+  - {frame: 1, action: move, position: [0.672, 0.201]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.674, 0.197]}
+  - {frame: 1, action: move, position: [0.678, 0.195]}
+  - {frame: 0, action: move, position: [0.68, 0.191]}
+  - {frame: 0, action: move, position: [0.684, 0.189]}
+  - {frame: 1, action: move, position: [0.686, 0.186]}
+  - {frame: 0, action: move, position: [0.689, 0.184]}
+  - {frame: 1, action: move, position: [0.691, 0.18]}
+  - {frame: 0, action: move, position: [0.693, 0.18]}
+  - {frame: 1, action: move, position: [0.693, 0.178]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.695, 0.176]}
+  - {frame: 4, action: move, position: [0.695, 0.174]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.695, 0.172]}
+  - {frame: 1, action: move, position: [0.699, 0.17]}
+  - {frame: 0, action: move, position: [0.701, 0.166]}
+  - {frame: 1, action: move, position: [0.705, 0.164]}
+  - {frame: 0, action: move, position: [0.709, 0.16]}
+  - {frame: 1, action: move, position: [0.717, 0.156]}
+  - {frame: 0, action: move, position: [0.721, 0.15]}
+  - {frame: 1, action: move, position: [0.725, 0.146]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.729, 0.145]}
+  - {frame: 1, action: move, position: [0.73, 0.143]}
+  - {frame: 0, action: move, position: [0.73, 0.141]}
+  - {frame: 1, action: move, position: [0.732, 0.141]}
+  - {frame: 2, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.736, 0.137]}
+  - {frame: 0, action: move, position: [0.74, 0.135]}
+  - {frame: 0, action: move, position: [0.746, 0.129]}
+  - {frame: 1, action: move, position: [0.75, 0.127]}
+  - {frame: 0, action: move, position: [0.758, 0.121]}
+  - {frame: 1, action: move, position: [0.762, 0.119]}
+  - {frame: 0, action: move, position: [0.768, 0.113]}
+  - {frame: 1, action: move, position: [0.771, 0.111]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.775, 0.107]}
+  - {frame: 1, action: move, position: [0.777, 0.105]}
+  - {frame: 0, action: move, position: [0.779, 0.105]}
+  - {frame: 1, action: move, position: [0.779, 0.104]}
+  - {frame: 2, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.781, 0.104]}
+  - {frame: 0, action: move, position: [0.781, 0.102]}
+  - {frame: 1, action: move, position: [0.785, 0.0996]}
+  - {frame: 0, action: move, position: [0.787, 0.0977]}
+  - {frame: 1, action: move, position: [0.789, 0.0977]}
+  - {frame: 0, action: move, position: [0.793, 0.0918]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.795, 0.0898]}
+  - {frame: 0, action: move, position: [0.797, 0.0898]}
+  - {frame: 1, action: move, position: [0.797, 0.0879]}
+  - {frame: 3, action: move, position: [0.799, 0.0879]}
+  - {frame: 1, action: move, position: [0.801, 0.0898]}
+  - {frame: 0, action: move, position: [0.801, 0.0918]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.803, 0.0977]}
+  - {frame: 0, action: move, position: [0.803, 0.109]}
+  - {frame: 1, action: move, position: [0.803, 0.125]}
+  - {frame: 0, action: move, position: [0.803, 0.135]}
+  - {frame: 1, action: move, position: [0.803, 0.152]}
+  - {frame: 0, action: move, position: [0.801, 0.17]}
+  - {frame: 1, action: move, position: [0.795, 0.189]}
+  - {frame: 0, action: move, position: [0.789, 0.203]}
+  - {frame: 1, action: move, position: [0.783, 0.217]}
+  - {frame: 0, action: move, position: [0.775, 0.227]}
+  - {frame: 1, action: move, position: [0.762, 0.24]}
+  - {frame: 0, action: move, position: [0.754, 0.248]}
+  - {frame: 1, action: move, position: [0.748, 0.252]}
+  - {frame: 0, action: move, position: [0.742, 0.256]}
+  - {frame: 1, action: move, position: [0.738, 0.258]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.736, 0.26]}
+  - {frame: 1, action: move, position: [0.734, 0.26]}
+  - {frame: 1, action: move, position: [0.732, 0.262]}
+  - {frame: 0, action: move, position: [0.73, 0.262]}
+  - {frame: 1, action: move, position: [0.729, 0.264]}
+  - {frame: 0, action: move, position: [0.725, 0.264]}
+  - {frame: 0, action: move, position: [0.723, 0.264]}
+  - {frame: 1, action: move, position: [0.715, 0.266]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.705, 0.268]}
+  - {frame: 1, action: move, position: [0.697, 0.271]}
+  - {frame: 0, action: move, position: [0.693, 0.271]}
+  - {frame: 1, action: move, position: [0.688, 0.271]}
+  - {frame: 0, action: move, position: [0.686, 0.271]}
+  - {frame: 1, action: move, position: [0.684, 0.271]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.682, 0.271]}
+  - {frame: 3, action: move, position: [0.68, 0.271]}
+  - {frame: 0, action: move, position: [0.678, 0.271]}
+  - {frame: 1, action: move, position: [0.674, 0.273]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.668, 0.273]}
+  - {frame: 1, action: move, position: [0.664, 0.273]}
+  - {frame: 0, action: move, position: [0.66, 0.273]}
+  - {frame: 1, action: move, position: [0.654, 0.273]}
+  - {frame: 0, action: move, position: [0.652, 0.273]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 2, action: move, position: [0.65, 0.275]}
+  - {frame: 1, action: move, position: [0.648, 0.275]}
+  - {frame: 1, action: move, position: [0.645, 0.277]}
+  - {frame: 0, action: move, position: [0.637, 0.279]}
+  - {frame: 0, action: move, position: [0.633, 0.279]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.625, 0.279]}
+  - {frame: 0, action: move, position: [0.617, 0.283]}
+  - {frame: 1, action: move, position: [0.609, 0.283]}
+  - {frame: 0, action: move, position: [0.602, 0.285]}
+  - {frame: 1, action: move, position: [0.598, 0.285]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.598, 0.287]}
+  - {frame: 3, action: mouse-up, key: LMB}
+  - {frame: 4, action: move, position: [0.596, 0.291]}
+  - {frame: 1, action: move, position: [0.594, 0.293]}
+  - {frame: 0, action: move, position: [0.59, 0.303]}
+  - {frame: 1, action: move, position: [0.588, 0.307]}
+  - {frame: 0, action: move, position: [0.586, 0.311]}
+  - {frame: 1, action: move, position: [0.578, 0.32]}
+  - {frame: 0, action: move, position: [0.576, 0.326]}
+  - {frame: 0, action: move, position: [0.574, 0.332]}
+  - {frame: 1, action: move, position: [0.57, 0.34]}
+  - {frame: 0, action: move, position: [0.57, 0.346]}
+  - {frame: 1, action: move, position: [0.57, 0.35]}
+  - {frame: 0, action: move, position: [0.568, 0.355]}
+  - {frame: 1, action: move, position: [0.568, 0.359]}
+  - {frame: 0, action: move, position: [0.568, 0.363]}
+  - {frame: 1, action: move, position: [0.568, 0.367]}
+  - {frame: 0, action: move, position: [0.57, 0.371]}
+  - {frame: 1, action: move, position: [0.572, 0.373]}
+  - {frame: 0, action: move, position: [0.572, 0.375]}
+  - {frame: 1, action: move, position: [0.574, 0.381]}
+  - {frame: 0, action: move, position: [0.576, 0.385]}
+  - {frame: 1, action: move, position: [0.578, 0.387]}
+  - {frame: 0, action: move, position: [0.58, 0.389]}
+  - {frame: 1, action: move, position: [0.582, 0.393]}
+  - {frame: 0, action: move, position: [0.584, 0.395]}
+  - {frame: 1, action: move, position: [0.586, 0.396]}
+  - {frame: 0, action: move, position: [0.588, 0.4]}
+  - {frame: 1, action: move, position: [0.592, 0.402]}
+  - {frame: 0, action: move, position: [0.598, 0.406]}
+  - {frame: 1, action: move, position: [0.604, 0.408]}
+  - {frame: 0, action: move, position: [0.617, 0.416]}
+  - {frame: 1, action: move, position: [0.635, 0.418]}
+  - {frame: 0, action: move, position: [0.668, 0.426]}
+  - {frame: 1, action: move, position: [0.691, 0.428]}
+  - {frame: 0, action: move, position: [0.738, 0.436]}
+  - {frame: 1, action: move, position: [0.777, 0.439]}
+  - {frame: 0, action: move, position: [0.84, 0.443]}
+  - {frame: 1, action: move, position: [0.879, 0.447]}
+  - {frame: 0, action: move, position: [0.916, 0.451]}
+  - {frame: 0, action: move, position: [0.949, 0.451]}
+  - {frame: 1, action: move, position: [0.98, 0.455]}
+  - {frame: 0, action: move, position: [0.99, 0.455]}
+  - {frame: 1, action: move, position: [0.994, 0.455]}
+  - {frame: 4, action: move, position: [0.992, 0.455]}
+  - {frame: 0, action: move, position: [0.988, 0.457]}
+  - {frame: 1, action: move, position: [0.986, 0.457]}
+  - {frame: 0, action: move, position: [0.98, 0.457]}
+  - {frame: 1, action: move, position: [0.975, 0.457]}
+  - {frame: 0, action: move, position: [0.967, 0.457]}
+  - {frame: 1, action: move, position: [0.951, 0.457]}
+  - {frame: 0, action: move, position: [0.936, 0.453]}
+  - {frame: 1, action: move, position: [0.889, 0.451]}
+  - {frame: 0, action: move, position: [0.863, 0.451]}
+  - {frame: 1, action: move, position: [0.838, 0.451]}
+  - {frame: 0, action: move, position: [0.795, 0.451]}
+  - {frame: 1, action: move, position: [0.764, 0.451]}
+  - {frame: 0, action: move, position: [0.74, 0.447]}
+  - {frame: 1, action: move, position: [0.723, 0.447]}
+  - {frame: 0, action: move, position: [0.711, 0.447]}
+  - {frame: 1, action: move, position: [0.701, 0.447]}
+  - {frame: 0, action: move, position: [0.697, 0.447]}
+  - {frame: 1, action: move, position: [0.693, 0.447]}
+  - {frame: 0, action: move, position: [0.691, 0.449]}
+  - {frame: 1, action: move, position: [0.688, 0.451]}
+  - {frame: 0, action: move, position: [0.686, 0.453]}
+  - {frame: 1, action: move, position: [0.682, 0.457]}
+  - {frame: 0, action: move, position: [0.68, 0.457]}
+  - {frame: 1, action: move, position: [0.676, 0.461]}
+  - {frame: 0, action: move, position: [0.672, 0.463]}
+  - {frame: 1, action: move, position: [0.67, 0.465]}
+  - {frame: 0, action: move, position: [0.668, 0.467]}
+  - {frame: 1, action: move, position: [0.666, 0.469]}
+  - {frame: 0, action: move, position: [0.664, 0.471]}
+  - {frame: 1, action: move, position: [0.662, 0.471]}
+  - {frame: 0, action: move, position: [0.66, 0.473]}
+  - {frame: 1, action: move, position: [0.66, 0.475]}
+  - {frame: 1, action: move, position: [0.658, 0.477]}
+  - {frame: 38, action: key-down, key: Super_L}
+  - frame: 5
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: '0.025%'
+    threshold: 1
+    ground_truth: truths/taichi/simulation/mass_spring_game.png
+  - frame: 1
+    action: succeed
