@@ -47,19 +47,24 @@ def next_step():
         raise Success
 
 
-def run_step(gui, step, dry=False):
+def run_step(gui, test, step, dry=False):
     if 'action' not in step:
         raise ValueError('Step %s has no action!', step)
     if step['action'] not in ACTIONS:
         raise ValueError('Unknown action %s!', step['action'])
 
     action = ACTIONS[step['action']]
-    args = {**step, 'dry': dry, 'gui': gui}
+    args = {**step, 'dry': dry, 'gui': gui, 'current_test': test}
     args = {k: v for k, v in args.items() if k in action.params}
+
+    if dry and 'dry' not in args:
+        return
+
     action(**args)
 
 
 def try_run_step(self):
+    test = STATE['current_test']
     step = STATE['step']
     if step is None:
         return False
@@ -74,7 +79,7 @@ def try_run_step(self):
         return False
 
     STATE['last_step_frame'] = self.frame
-    run_step(self, step)
+    run_step(self, test, step)
     next_step()
     return True
 
@@ -153,7 +158,7 @@ def collect_timeline(rst, p):
             continue
         else:
             for step in test['steps']:
-                run_step(None, step, dry=True)
+                run_step(None, test, step, dry=True)
 
             rst.append(test)
 
