@@ -2,4 +2,10 @@
 - path: repos/taichi/python/taichi/examples/ggui_examples/mpm3d_ggui.py
   args: []
   steps:
-  - {frame: 30, action: succeed}
+  - frame: 180
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 0.025%
+    ground_truth: truths/taichi/ggui_examples/mpm3d_ggui.png
+  - frame: 1
+    action: succeed
