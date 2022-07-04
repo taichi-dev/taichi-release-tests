@@ -21,6 +21,7 @@ options = OptionsProxy()
 parser = argparse.ArgumentParser('taichi-release-tests-runner')
 parser.add_argument('timelines')
 parser.add_argument('--log', default='INFO')
+parser.add_argument('--runners', type=int, default=1)
 
 
 def parse_args():

@@ -3,6 +3,7 @@
 # -- stdlib --
 from pathlib import Path
 import random
+import multiprocessing
 import importlib
 import importlib.util
 import numpy as np  # pyright: ignore
@@ -169,6 +170,9 @@ def run(test):
         spec.loader.exec_module(module)
     except Success:
         pass
+    except Exception:
+        log.error("%s failed!", test['path'])
+        raise
 
     for gui in ACTIVE_GUI:
         gui.close()
@@ -195,27 +199,62 @@ def collect_timeline(rst, p):
             rst.append(test)
 
 
+def run_as_worker(id, wq, cq):
+    while True:
+        test = wq.get()
+        if test is None:
+            return
 
-def run_timelines(timelines):
-    rst = []
-    p = Path(timelines)
+        try:
+            run(test)
+            cq.put((id, 'ok'))
+        except Exception:
+            cq.put((id, 'error'))
+            raise
+
+
+
+def run_timelines(timeline_path):
+    timelines = []
+    p = Path(timeline_path)
     if p.is_dir():
-        log.info('Run timelines in %s', timelines)
+        log.info('Run timelines in %s', timeline_path)
         for dirp, _, filenames in os.walk(p):
             for fn in filenames:
                 if not fn.endswith('.yaml'):
                     continue
 
-                collect_timeline(rst, Path(dirp) / fn)
+                collect_timeline(timelines, Path(dirp) / fn)
     elif p.is_file():
-        collect_timeline(rst, p)
+        collect_timeline(timelines, p)
     else:
         log.error("Don't know how to run %s", p)
         return
 
-    for test in rst:
-        run(test)
+    if options.runners == 1:
+        for test in timelines:
+            run(test)
+    else:
+        wq = multiprocessing.Queue()
+        cq = multiprocessing.Queue()
+        workers = []
+        for i in range(options.runners):
+            proc = multiprocessing.Process(target=run_as_worker, args=(i, wq, cq))
+            proc.start()
+            workers.append(proc)
 
+        for test in timelines:
+            wq.put(test)
+
+        for _ in range(options.runners):
+            wq.put(None)
+
+        wq.close()
+
+        for _ in range(len(timelines)):
+            id, status = cq.get()
+            if status == 'error':
+                raise Exception('Worker %d failed!', id)
 
 def main():
     parse_args()

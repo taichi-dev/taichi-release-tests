@@ -6,3 +6,4 @@ imgui.ini
 *.ply
 layout.pdf
 results/
+*.bad.png
