@@ -4,7 +4,7 @@
 # -- third party --
 # -- own --
 from .common import register
-from exceptions import Success
+from exceptions import Success, Failed
 
 
 # -- code --
@@ -14,3 +14,11 @@ def succeed(dry):
         return
 
     raise Success
+
+
+@register('fail')
+def fail(dry):
+    if dry:
+        return
+
+    raise Failed
