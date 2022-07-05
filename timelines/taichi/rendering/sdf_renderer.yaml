@@ -5,8 +5,7 @@
   - frame: 300
     action: capture-and-compare
     compare: sum-difference
-    threshold: 50145  # 0.025% color difference
-    threshold: 1
+    threshold: 5%
     ground_truth: truths/taichi/rendering/sdf_renderer.png
   - frame: 1
     action: succeed
