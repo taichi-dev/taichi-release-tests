@@ -5,8 +5,7 @@
   - frame: 60
     action: capture-and-compare
     compare: sum-difference
-    threshold: 50145  # 0.025% color difference
-    threshold: 1
+    threshold: 0.025%
     ground_truth: truths/taichi/algorithm/mgpcg_advanced.png
   - frame: 1
     action: succeed

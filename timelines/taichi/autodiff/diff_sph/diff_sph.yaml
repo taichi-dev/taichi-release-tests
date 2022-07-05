@@ -19,8 +19,7 @@
   - frame: 30
     action: capture-and-compare
     compare: sum-difference
-    threshold: 50145  # 0.025% color difference
-    threshold: 1
+    threshold: 0.025%
     ground_truth: truths/taichi/autodiff/diff_sph/diff_sph.png
   - frame: 1
     action: succeed

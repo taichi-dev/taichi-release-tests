@@ -5,7 +5,7 @@
   - frame: 200
     action: capture-and-compare
     compare: pixel-count
-    threshold: 1
+    threshold: 1%
     ground_truth: truths/taichi/simulation/vortex_rings.png
   - frame: 1
     action: succeed
