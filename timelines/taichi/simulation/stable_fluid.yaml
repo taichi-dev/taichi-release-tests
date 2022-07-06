@@ -2760,9 +2760,4 @@
   - {frame: 0, action: move, position: [0.535, 0.746]}
   - {frame: 1, action: move, position: [0.533, 0.744]}
   - frame: 1
-    action: capture-and-compare
-    compare: sum-difference
-    threshold: 1000
-    ground_truth: truths/taichi/simulation/stable_fluid.png
-  - frame: 1
     action: succeed

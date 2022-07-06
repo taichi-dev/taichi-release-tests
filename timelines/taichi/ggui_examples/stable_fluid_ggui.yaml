@@ -189,10 +189,5 @@
   - {frame: 1, action: move, position: [0.705, 0.59]}
   - {frame: 1, action: move, position: [0.703, 0.623]}
   - {frame: 1, action: mouse-up, key: LMB}
-  - frame: 10
-    action: capture-and-compare
-    compare: sum-difference
-    threshold: 0.025%
-    ground_truth: truths/taichi/ggui_examples/stable_fluid_ggui.png
   - frame: 1
     action: succeed
