@@ -30,9 +30,9 @@ def mse(a: ti.template(), b: ti.template()) -> ti.f32:
 
 
 @ti.kernel
-def sum_difference(a: ti.template(), b: ti.template()) -> ti.i64:
+def sum_difference(a: ti.template(), b: ti.template()) -> ti.i32:
     assert a.shape == b.shape
-    acc: ti.i64 = 0
+    acc: ti.i32 = 0
     for i, j in a:
         for k in ti.static(range(3)):
             v: ti.i32 = a[i, j][k] - b[i, j][k]
@@ -41,9 +41,9 @@ def sum_difference(a: ti.template(), b: ti.template()) -> ti.i64:
 
 
 @ti.kernel
-def pixel_count(a: ti.template(), b: ti.template()) -> ti.i64:
+def pixel_count(a: ti.template(), b: ti.template()) -> ti.i32:
     assert a.shape == b.shape
-    acc: ti.i64 = 0
+    acc: ti.i32 = 0
     for i, j in a:
         if any(a[i, j] != b[i, j]):
             acc += 1
