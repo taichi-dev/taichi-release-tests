@@ -4,8 +4,8 @@
   steps:
   - frame: 200
     action: capture-and-compare
-    compare: pixel-count
-    threshold: 1%
+    compare: blur-sum-difference
+    threshold: 0.2%
     ground_truth: truths/taichi/simulation/vortex_rings.png
   - frame: 1
     action: succeed
