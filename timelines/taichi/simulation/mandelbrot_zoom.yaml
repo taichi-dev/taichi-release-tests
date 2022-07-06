@@ -4,8 +4,8 @@
   steps:
   - frame: 100
     action: capture-and-compare
-    compare: pixel-count
-    threshold: 10
+    compare: sum-difference
+    threshold: 0.05%
     ground_truth: truths/taichi/simulation/mandelbrot_zoom.png
   - frame: 1
     action: succeed
