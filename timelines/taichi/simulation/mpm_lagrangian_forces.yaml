@@ -4,8 +4,8 @@
   steps:
   - frame: 150
     action: capture-and-compare
-    compare: sum-difference
-    threshold: '0.025%'
+    compare: blur-sum-difference
+    threshold: '0.01%'
     ground_truth: truths/taichi/simulation/mpm_lagrangian_forces.png
   - frame: 1
     action: succeed
