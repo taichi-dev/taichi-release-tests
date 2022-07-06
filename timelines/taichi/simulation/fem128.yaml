@@ -523,8 +523,8 @@
 
   - frame: 5
     action: capture-and-compare
-    compare: sum-difference
-    threshold: 0.005%
+    compare: blur-sum-difference
+    threshold: 0.02%
     ground_truth: truths/taichi/simulation/fem128.png
   - frame: 1
     action: succeed
