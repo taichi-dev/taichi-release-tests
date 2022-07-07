@@ -2,10 +2,10 @@
 - path: repos/taichi/python/taichi/examples/simulation/vortex_rings.py
   args: []
   steps:
-  - frame: 200
+  - frame: 100
     action: capture-and-compare
     compare: blur-sum-difference
-    threshold: 0.2%
+    threshold: 0.1%
     ground_truth: truths/taichi/simulation/vortex_rings.png
   - frame: 1
     action: succeed
