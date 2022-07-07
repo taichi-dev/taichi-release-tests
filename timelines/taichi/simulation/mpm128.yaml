@@ -1,9 +1,9 @@
 ---
 - path: repos/taichi/python/taichi/examples/simulation/mpm128.py
   args: []
-  before_first_kernel: |
-    grid_v = ti.Vector.field(2, dtype=ti.f64, shape=(n_grid, n_grid))  # use f64
-    grid_m = ti.field(dtype=ti.f64, shape=(n_grid, n_grid))  # use f64
+  # before_first_kernel: |
+  #   grid_v = ti.Vector.field(2, dtype=ti.f64, shape=(n_grid, n_grid))  # use f64
+  #   grid_m = ti.field(dtype=ti.f64, shape=(n_grid, n_grid))  # use f64
   steps:
   - frame: 60
     action: move
@@ -29,11 +29,11 @@
   - frame: 0
     action: mouse-down
     key: RMB
-  - frame: 10
-    action: capture-and-compare
-    compare: sum-difference
-    ground_truth: truths/taichi/simulation/mpm128.png
-    threshold: 50145  # 0.025% color difference
+  # - frame: 10
+  #   action: capture-and-compare
+  #   compare: sum-difference
+  #   ground_truth: truths/taichi/simulation/mpm128.png
+  #   threshold: 50145  # 0.025% color difference
   - frame: 1
     action: key-press
     key: r
