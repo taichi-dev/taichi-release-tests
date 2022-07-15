@@ -491,7 +491,7 @@
   - frame: 1
     action: capture-and-compare
     compare: sum-difference
-    threshold: '0.2%'
+    threshold: '3%'
     ground_truth: truths/taichi/ggui_examples/fem128_ggui.png
   - frame: 1
     action: succeed
