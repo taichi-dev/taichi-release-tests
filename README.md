@@ -130,20 +130,15 @@ Captures image in GUI window, compare it to a specified ground truth.
 
 `compare` can have these methods for now:
 
-|---------------------|----------------------------------------------------------------------------------|
 | compare             | Description                                                                      |
-|---------------------|----------------------------------------------------------------------------------|
+| ------------------- | -------------------------------------------------------------------------------- |
 | sum-difference      | Calc `sum(abs(a[i] - b[i]) for i in <every-pixel>`                               |
-|---------------------|----------------------------------------------------------------------------------|
 | blur-sum-difference | Apply gaussian blur to both capture and ground truth, calculate `sum-difference` |
-|---------------------|----------------------------------------------------------------------------------|
 | pixel-count         | Count every different pixel                                                      |
-|---------------------|----------------------------------------------------------------------------------|
 | rmse                | Calc `sqrt(sum((a[i] - b[i])**2 for i in <every-pixel>))`                        |
-|---------------------|----------------------------------------------------------------------------------|
 
 
-`threshold` can specify a percentage(as a string, like `"0.01%"').
+`threshold` can specify a percentage(as a string, like `"0.01%"`).
 `ground_truth` is a path to png file, resides in `truths` directory.
 
 Example: [fractal.yaml](timelines/taichi/simulation/fractal.yaml)
@@ -177,6 +172,7 @@ If you added a test for a different repo, you should also modify `taichi` CI scr
 clone your target repo to `repos` directory.
 
 [*nix Test Script](https://github.com/taichi-dev/taichi/blob/master/.github/workflows/scripts/unix_test.sh#L65)
+
 [Windows Test Script](https://github.com/taichi-dev/taichi/blob/master/.github/workflows/scripts/win_test.ps1#L30)
 
 
