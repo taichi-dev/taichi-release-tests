@@ -132,11 +132,10 @@ Captures image in GUI window, compare it to a specified ground truth.
 
 | compare             | Description                                                                      |
 | ------------------- | -------------------------------------------------------------------------------- |
-| sum-difference      | Calc `sum(abs(a[i] - b[i]) for i in <every-pixel>`                               |
+| sum-difference      | Calc `sum(abs(a[i] - b[i]) for i in <every-pixel>)`                              |
 | blur-sum-difference | Apply gaussian blur to both capture and ground truth, calculate `sum-difference` |
 | pixel-count         | Count every different pixel                                                      |
-| rmse                | Calc `sqrt(sum((a[i] - b[i])**2 for i in <every-pixel>))`                        |
-
+| rmse                | Calc `sqrt(sum((a[i] - b[i])**2 for i in <every-pixel>) / <total-pixel-count>)`  |
 
 `threshold` can specify a percentage(as a string, like `"0.01%"`).
 `ground_truth` is a path to png file, resides in `truths` directory.
