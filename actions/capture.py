@@ -7,6 +7,7 @@ import tempfile
 
 # -- third party --
 import matplotlib.pyplot as plt
+import numpy as np
 import taichi as ti
 
 # -- own --
@@ -103,6 +104,19 @@ def capture(gui, path):
         plt.savefig(str(path))
 
 
+def naive_downsample_2x(a):
+    # Avoid import cv2
+    w, h, c = a.shape
+    assert (w & 1) + (h & 1) == 0
+    ds = np.zeros(dtype=np.int16, shape=(w//2, h//2, c))
+    ds += a[::2, ::2]
+    ds += a[1::2, ::2]
+    ds += a[::2, 1::2]
+    ds += a[1::2, 1::2]
+    ds //= 4
+    return ds.astype(np.uint8)
+
+
 @register('capture-and-compare')
 def capture_and_compare(dry, gui, compare, ground_truth, threshold):
     if dry:
@@ -118,8 +132,11 @@ def capture_and_compare(dry, gui, compare, ground_truth, threshold):
     capture(gui, td / 'capture.png')
     captured = ti.tools.imread(str(td / 'capture.png'))
     truth = ti.tools.imread(str(truth))
-    if captured.shape != truth.shape:
-        raise Failed('capture-and-compare shape mismatch!')
+    if captured.shape == (truth.shape[0] * 2, truth.shape[1] * 2, truth.shape[2]):
+        # Compat for Retina display
+        captured = naive_downsample_2x(captured)
+    elif captured.shape != truth.shape:
+        raise Failed(f'capture-and-compare shape mismatch: captured:{captured.shape} != truth:{truth.shape} !')
 
     f_captured = ti.Vector.field(3, dtype=ti.i16, shape=captured.shape[:2])
     f_truth = ti.Vector.field(3, dtype=ti.i16, shape=truth.shape[:2])
