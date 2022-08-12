@@ -26,8 +26,8 @@ from utils.misc import hook
 # -- code --
 log = logging.getLogger('main')
 
-
 STATE = {
+    'orig_work_dir': Path(os.getcwd()),
     'current_test': None,
     'current_module': None,
     'ensure_compiled_run': False,
@@ -62,7 +62,12 @@ def run_step(gui, test, step, dry=False):
     if dry and 'dry' not in args:
         return
 
-    action(**args)
+    try:
+        orig = os.getcwd()
+        os.chdir(STATE['orig_work_dir'])
+        action(**args)
+    finally:
+        os.chdir(orig)
 
 
 def try_run_step(self):
@@ -164,7 +169,8 @@ def run(test):
     module = importlib.util.module_from_spec(spec)
     STATE['current_module'] = module
     sys.argv = [test['path']] + test['args']
-
+    wd = Path(test['path']).resolve().parent
+    os.chdir(wd)
     try:
         spec.loader.exec_module(module)
     except Success:
@@ -172,6 +178,8 @@ def run(test):
     except BaseException:
         log.error("%s failed!", test['path'])
         raise
+    finally:
+        os.chdir(STATE['orig_work_dir'])
 
     for gui in ACTIVE_GUI:
         gui.close()

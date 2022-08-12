@@ -1,0 +1,9 @@
+---
+- path: repos/quantaichi/gol/galaxy.py
+  args: ['--arch=cuda', '--out-dir=out', '--steps-per-capture=2560', '--img-size=4096']
+  steps:
+  - frame: 1
+    action: capture-and-compare
+    compare: pixel-count
+    threshold: 1
+    ground_truth: truths/quantaichi/gol-galaxy.png

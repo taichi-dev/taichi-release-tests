@@ -2,6 +2,7 @@
 
 # -- stdlib --
 from pathlib import Path
+import logging
 import shutil
 import tempfile
 
@@ -108,9 +109,10 @@ def capture_and_compare(dry, gui, compare, ground_truth, threshold):
     if dry:
         return
 
-    truth = Path(ground_truth)
+    truth = Path(ground_truth).resolve()
     if options.generate_captures:
         truth.parent.mkdir(parents=True, exist_ok=True)
+        logging.getLogger('capture').info(f'Generating {truth}')
         capture(gui, truth)
         return
 
