@@ -2,16 +2,17 @@
 
 # -- stdlib --
 import argparse
-import random
-import pathlib
 import importlib
 import importlib.util
-import numpy as np  # pyright: ignore
 import logging
+import os
+import pathlib
+import random
 import sys
 
 # -- third party --
-import taichi as ti  # pyright: ignore
+import numpy as np
+import taichi as ti
 
 # -- own --
 from utils.misc import hook
@@ -203,10 +204,15 @@ def run(program, args, output):
     assert spec.loader
     module = importlib.util.module_from_spec(spec)
     sys.argv = [program] + args
+    wd = pathlib.Path(program).resolve().parent
+    orig = os.getcwd()
     try:
+        os.chdir(wd)
         spec.loader.exec_module(module)
     except BaseException:
         pass
+    finally:
+        os.chdir(orig)
 
     OUTPUT.write('  - {frame: 30, action: succeed}\n')
 
