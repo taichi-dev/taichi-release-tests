@@ -11,17 +11,18 @@ import random
 import sys
 
 # -- third party --
-import matplotlib.pyplot as plt
 import numpy as np
 import taichi as ti
 import yaml
 
 # -- own --
 from actions import ACTIONS
+from actions.common import register
 from args import options, parse_args
 from exceptions import Success
 from utils import logconfig
 from utils.misc import hook
+
 
 # -- code --
 log = logging.getLogger('main')
@@ -38,6 +39,8 @@ STATE = {
 
 ACTIVE_GUI = set()
 ACTIVE_GGUI = set()
+
+apply = lambda f, *a, **k: f(*a, **k)
 
 
 def next_step():
@@ -111,20 +114,61 @@ def ggui_show(orig, self, _=None):
 ti.ui.Window.frame = 0
 
 
-@hook(plt, 'show')
-def plt_show(orig, *args, **kwargs):
-    # special case
-    test = STATE['current_test']
-    step = STATE['step']
-    if step is None:
+@apply
+def hook_matplotlib():
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError:
         return
 
-    if not step['action'] == 'capture-and-compare':
+    @hook(plt)
+    def show(orig, *args, **kwargs):
+        # special case
+        test = STATE['current_test']
+        step = STATE['step']
+        if step is None:
+            return
+
+        if not step['action'] == 'capture-and-compare':
+            return
+
+        run_step(plt, test, step)
+        next_step()
+        return True
+
+
+@apply
+def hook_opencv():
+    try:
+        import cv2
+    except ImportError:
         return
 
-    run_step(plt, test, step)
-    next_step()
-    return True
+    cv2.frame = 0
+
+    @hook(cv2)
+    def waitKey(orig, *a, **k):
+        return orig(1)
+
+    @hook(cv2)
+    def imwrite(orig, *args, **kwargs):
+        return
+
+    @hook(cv2)
+    def imshow(orig, winname, mat):
+        orig(winname, mat)
+        cv2._imshow_image = mat
+        while try_run_step(cv2):
+            pass
+
+    @register('__reset:cv2')
+    def reset_cv2():
+        try:
+            import cv2
+            cv2.destroyAllWindows()
+        except ImportError:
+            pass
+
 
 
 @hook(ti)
@@ -171,6 +215,7 @@ def run(test):
     sys.argv = [test['path']] + test['args']
     wd = Path(test['path']).resolve().parent
     os.chdir(wd)
+    sys.path.insert(0, str(wd))
     try:
         spec.loader.exec_module(module)
     except Success:
@@ -180,6 +225,7 @@ def run(test):
         raise
     finally:
         os.chdir(STATE['orig_work_dir'])
+        sys.path.remove(str(wd))
 
     for gui in ACTIVE_GUI:
         gui.close()
@@ -215,7 +261,7 @@ def run_timelines(timeline_path):
         log.info('Run timelines in %s', timeline_path)
         for dirp, _, filenames in os.walk(p):
             for fn in filenames:
-                if not fn.endswith('.yaml'):
+                if not fn.endswith('.yaml') and not fn.endswith('.yml'):
                     continue
 
                 collect_timeline(timelines, Path(dirp) / fn)

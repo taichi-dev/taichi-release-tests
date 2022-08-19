@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 # -- stdlib --
+import types
 from pathlib import Path
 import logging
 import shutil
 import tempfile
 
 # -- third party --
-import matplotlib.pyplot as plt
 import taichi as ti
 
 # -- own --
@@ -91,6 +91,8 @@ def gaussian_blur(a: ti.template(), aux: ti.template()):
         a[i, j] = ti.cast(acc, ti.i16)
 
 
+ismodule = lambda obj, name: isinstance(obj, types.ModuleType) and obj.__name__ == name
+
 # -- code --
 def capture(gui, path):
     if gui is None:
@@ -100,8 +102,12 @@ def capture(gui, path):
         gui.write_image(str(path))
     elif isinstance(gui, ti.GUI):
         gui.core.screenshot(str(path))
-    elif gui is plt:
+    elif ismodule(gui, 'matplotlib.pyplot'):
+        import matplotlib.pyplot as plt
         plt.savefig(str(path))
+    elif ismodule(gui, 'cv2'):
+        import cv2
+        cv2.imwrite.orig(str(path), cv2._imshow_image)
 
 
 @register('capture-and-compare')
