@@ -207,7 +207,7 @@ def run(test):
         if act.startswith('__reset:'):
             ACTIONS[act]()
 
-    spec = importlib.util.spec_from_file_location('__main__', test['path'])
+    spec = importlib.util.spec_from_file_location('__main__', Path(test['path']).resolve())
     assert spec
     assert spec.loader
     module = importlib.util.module_from_spec(spec)
