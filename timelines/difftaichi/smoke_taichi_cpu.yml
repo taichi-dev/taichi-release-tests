@@ -1,0 +1,5 @@
+---
+- path: repos/difftaichi/examples/smoke_taichi_cpu.py
+  args: ['--iters', '10']
+  steps:
+  - {frame: 30, action: succeed}

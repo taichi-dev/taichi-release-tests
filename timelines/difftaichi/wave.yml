@@ -1,0 +1,5 @@
+---
+- path: repos/difftaichi/examples/wave.py
+  args: ['--iters', '10']
+  steps:
+  - {frame: 30, action: succeed}

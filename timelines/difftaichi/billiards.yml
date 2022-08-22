@@ -1,0 +1,5 @@
+---
+- path: repos/difftaichi/examples/billiards.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}

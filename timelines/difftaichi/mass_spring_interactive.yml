@@ -1,0 +1,5 @@
+---
+- path: repos/difftaichi/examples/mass_spring_interactive.py
+  args: ['0', '--iters=3']
+  steps:
+  - {frame: 30, action: succeed}

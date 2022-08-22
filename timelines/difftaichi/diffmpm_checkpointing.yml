@@ -1,0 +1,5 @@
+---
+- path: repos/difftaichi/examples/diffmpm_checkpointing.py
+  args: ['--iters', '4']
+  steps:
+  - {frame: 30, action: succeed}
