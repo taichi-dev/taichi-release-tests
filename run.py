@@ -242,7 +242,14 @@ def collect_timeline(rst, p):
     with open(p) as f:
         tests = yaml.safe_load(f)
 
-    for test in tests:
+    u = os.uname()
+
+    for i, test in enumerate(tests):
+        if (m := test.get('machine', None)) is not None:
+            if u.machine not in m:
+                log.debug('Skipping %s:%d due to incompatible machine type %s (we are on %s)', test['path'], i, m, u.machine)
+                continue
+
         p = Path(test['path'])
         if not p.exists():
             log.error('%s does not exist!', p)

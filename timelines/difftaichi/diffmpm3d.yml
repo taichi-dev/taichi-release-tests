@@ -1,5 +1,6 @@
 ---
 - path: repos/difftaichi/examples/diffmpm3d.py
   args: ['--iters', '10']
+  machine: [x86_64]
   steps:
   - {frame: 30, action: succeed}
