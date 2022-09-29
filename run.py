@@ -7,6 +7,7 @@ import importlib
 import importlib.util
 import logging
 import os
+import platform
 import random
 import sys
 
@@ -242,12 +243,17 @@ def collect_timeline(rst, p):
     with open(p) as f:
         tests = yaml.safe_load(f)
 
-    u = os.uname()
+    machine = platform.machine()
+    COALESCE = {
+        'AMD64': 'x86_64',
+        'x64': 'x86_64',
+    }
+    machine = COALESCE.get(machine, machine)
 
     for i, test in enumerate(tests):
         m = test.get('machine', None)
-        if m and u.machine not in m:
-            log.debug('Skipping %s:%d due to incompatible machine type %s (we are on %s)', test['path'], i, m, u.machine)
+        if m and machine not in m:
+            log.debug('Skipping %s:%d due to incompatible machine type %s (we are on %s)', test['path'], i, m, machine)
             continue
 
         p = Path(test['path'])
