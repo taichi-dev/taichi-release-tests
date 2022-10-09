@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 # -- stdlib --
-import types
 from pathlib import Path
 import logging
+import os
 import shutil
 import tempfile
+import types
 
 # -- third party --
 import taichi as ti
@@ -15,9 +16,9 @@ from .common import register
 from args import options, parser
 from exceptions import Failed
 
-
 # -- code --
 parser.add_argument('--generate-captures', action='store_true')
+parser.add_argument('--save-compare-dir', type=str, default=os.getcwd() + '/bad-compare')
 
 # def _get_gaussian_coef(radius):
 #     from math import erfc
@@ -115,18 +116,28 @@ def capture_and_compare(dry, gui, compare, ground_truth, threshold):
     if dry:
         return
 
-    truth = Path(ground_truth).resolve()
+    truth_path = Path(ground_truth).resolve()
     if options.generate_captures:
-        truth.parent.mkdir(parents=True, exist_ok=True)
-        logging.getLogger('capture').info(f'Generating {truth}')
-        capture(gui, truth)
+        truth_path.parent.mkdir(parents=True, exist_ok=True)
+        logging.getLogger('capture').info(f'Generating {truth_path}')
+        capture(gui, truth_path)
         return
 
     td = Path(tempfile.mkdtemp())
     capture(gui, td / 'capture.png')
+
+    def save_bad_compare():
+        save_dir = Path(options.save_compare_dir)
+        save_dir.mkdir(parents=True, exist_ok=True)
+        basename, extname = truth_path.name.rsplit('.', 1)
+        shutil.copy(truth_path, save_dir / f'{basename}.truth.{extname}')
+        shutil.move(str(td / 'capture.png'), save_dir / f'{basename}.capture.png')
+        shutil.rmtree(td, ignore_errors=True)
+
     captured = ti.tools.imread(str(td / 'capture.png'))
-    truth = ti.tools.imread(str(truth))
+    truth = ti.tools.imread(str(truth_path))
     if captured.shape != truth.shape:
+        save_bad_compare()
         raise Failed('capture-and-compare shape mismatch!')
 
     f_captured = ti.Vector.field(3, dtype=ti.i16, shape=captured.shape[:2])
@@ -158,8 +169,7 @@ def capture_and_compare(dry, gui, compare, ground_truth, threshold):
         raise ValueError(f'Unknown compare method: {compare}')
 
     if diff > threshold:
-        shutil.move(str(td / 'capture.png'), str(ground_truth) + '.bad.png')
-        shutil.rmtree(td, ignore_errors=True)
+        save_bad_compare()
         raise Failed(f'capture-and-compare failed! diff({diff}) > threshold({threshold})')
 
     shutil.rmtree(td, ignore_errors=True)
