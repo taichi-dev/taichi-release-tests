@@ -106,6 +106,7 @@ def capture(gui, path):
     elif ismodule(gui, 'matplotlib.pyplot'):
         import matplotlib.pyplot as plt
         plt.savefig(str(path))
+        plt.close()
     elif ismodule(gui, 'cv2'):
         import cv2
         cv2.imwrite.orig(str(path), cv2._imshow_image)
