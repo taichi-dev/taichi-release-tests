@@ -112,6 +112,15 @@ def capture(gui, path):
         cv2.imwrite.orig(str(path), cv2._imshow_image)
 
 
+@register('__reset:matplotlib')
+def reset_matplotlib():
+    try:
+        import matplotlib.pyplot as plt
+        plt.close()
+    except Exception:
+        pass
+
+
 @register('capture-and-compare')
 def capture_and_compare(dry, gui, compare, ground_truth, threshold):
     if dry:
