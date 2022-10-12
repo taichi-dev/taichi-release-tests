@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 
+# --- prioritized ---
+import os
+os.environ['TI_GUI_FAST'] = '0'
+os.environ['MPLBACKEND'] = 'agg'
+
 # -- stdlib --
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 import importlib
 import importlib.util
 import logging
-import os
 import platform
 import random
 import sys
@@ -297,10 +301,6 @@ def run_timelines(timeline_path):
 def main():
     parse_args()
     logconfig.init(getattr(logging, options.log))
-
-    os.environ['TI_GUI_FAST'] = '0'
-    os.environ['MPLBACKEND'] = 'agg'
-
     run_timelines(options.timelines)
 
 
