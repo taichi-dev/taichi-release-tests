@@ -299,6 +299,7 @@ def main():
     logconfig.init(getattr(logging, options.log))
 
     os.environ['TI_GUI_FAST'] = '0'
+    os.environ['MPLBACKEND'] = 'agg'
 
     run_timelines(options.timelines)
 
