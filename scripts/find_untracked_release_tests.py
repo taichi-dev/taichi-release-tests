@@ -3,6 +3,12 @@ import yaml
 import tempfile
 import re
 import pprint
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-c", "--check_for_main", default=False, help="Only python files with \"if __name__ == \"__main__\"\" are counted into Demo files",
+                    action="store_true")
+args = parser.parse_args()
 
 pp = pprint.PrettyPrinter(indent=4)
 tempdir = tempfile.mkdtemp()
@@ -26,10 +32,15 @@ def ci_covered_release_tests(root_dir, pre_fix="repos/"):
 
     return covered_release_test_names
 
-def find_existing_examples(repo_name, github_addr, examples_dir, require_entrance=True):
+
+def find_existing_examples(repo_name, github_addr, examples_dir, check_for_main):
     repo_dir = f"{tempdir}/{repo_name}/"
-    os.system(f"git clone {github_addr} {repo_dir}")
-    
+    try:
+        os.system(f"git clone {github_addr} {repo_dir} --depth=1")
+    except Exception as e:
+        print("Unable to git clone {repo_name} from {github_addr}")
+        raise e.what()
+
     existing_examples = set()
     examples_root_dir = os.path.join(repo_dir, examples_dir)
     for path, _, files in os.walk(examples_root_dir):
@@ -38,7 +49,7 @@ def find_existing_examples(repo_name, github_addr, examples_dir, require_entranc
                 continue
 
             filepath = os.path.join(path, filename)
-            if require_entrance:
+            if check_for_main:
                 with open(filepath, "r") as f:
                     fcontent = f.read()
                     pattern = r"if __name__\s*==\s*[\\\'\\\"]__main__[\\\'\\\"]\s*:"
@@ -54,35 +65,27 @@ def find_existing_examples(repo_name, github_addr, examples_dir, require_entranc
             existing_examples.add(f"{full_path}")
     return existing_examples
 
-def find_untracked_release_tests(covered_release_test_names, existing_examples):
-    untracked_tests = set()
-    for test_name in existing_examples:
-        if test_name in covered_release_test_names:
-            continue
-        untracked_tests.add(test_name)
-    return untracked_tests
 
-if __name__ == "__main__":
+def main():
     root_dir = "timelines"
     covered_release_test_names = ci_covered_release_tests(root_dir)
 
-    repo_name = "taichi"
-    github_addr = "https://github.com/taichi-dev/taichi.git"
-    examples_dir = f"python/taichi/examples"
-    taichi_examples = find_existing_examples(repo_name, github_addr, examples_dir)
+    test_info = {
+        "taichi" : ["https://github.com/taichi-dev/taichi.git", "python/taichi/examples"],
+        "difftaichi" : ["https://github.com/taichi-dev/difftaichi.git", ""],
+        "quantaichi" : ["https://github.com/taichi-dev/quantaichi.git", ""]
+    }
 
-    repo_name = "difftaichi"
-    github_addr = "https://github.com/taichi-dev/difftaichi.git"
-    examples_dir = f""
-    diff_examples = find_existing_examples(repo_name, github_addr, examples_dir)
+    existing_examples = set()
+    for repo_name, (github_addr, examples_dir) in test_info.items():
+        existing_examples |= find_existing_examples(repo_name, github_addr, examples_dir, args.check_for_main)
     
-    repo_name = "quantaichi"
-    github_addr = "https://github.com/taichi-dev/quantaichi.git"
-    examples_dir = f""
-    quant_examples = find_existing_examples(repo_name, github_addr, examples_dir)
-
-    untracked_tests = find_untracked_release_tests(covered_release_test_names, taichi_examples)
-    untracked_tests = untracked_tests.union(find_untracked_release_tests(covered_release_test_names, diff_examples))
-    untracked_tests = untracked_tests.union(find_untracked_release_tests(covered_release_test_names, quant_examples))
+    untracked_tests = existing_examples - covered_release_test_names
+    
     print("Untracked Release Tests:")
     pp.pprint(untracked_tests)
+
+
+
+if __name__ == "__main__":
+    main()
