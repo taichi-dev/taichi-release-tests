@@ -4,6 +4,7 @@
 import argparse
 
 # -- third party --
+import numpy as np
 import taichi as ti
 
 # -- own --
@@ -27,8 +28,8 @@ def main():
     f_a = ti.Vector.field(3, dtype=ti.i16, shape=file_a.shape[:2])
     f_b = ti.Vector.field(3, dtype=ti.i16, shape=file_b.shape[:2])
     f_aux = ti.Vector.field(3, dtype=ti.i16, shape=file_a.shape[:2])
-    f_a.from_numpy(file_a[:, :, :3])
-    f_b.from_numpy(file_b[:, :, :3])
+    f_a.from_numpy(np.ascontiguousarray(file_a[:, :, :3]))
+    f_b.from_numpy(np.ascontiguousarray(file_b[:, :, :3]))
 
     pixels = f_a.shape[0] * f_a.shape[1]
     diff = rmse(f_a, f_b)

@@ -9,6 +9,7 @@ import tempfile
 import types
 
 # -- third party --
+import numpy as np
 import taichi as ti
 
 # -- own --
@@ -152,8 +153,8 @@ def capture_and_compare(dry, gui, compare, ground_truth, threshold):
 
     f_captured = ti.Vector.field(3, dtype=ti.i16, shape=captured.shape[:2])
     f_truth = ti.Vector.field(3, dtype=ti.i16, shape=truth.shape[:2])
-    f_captured.from_numpy(captured[:, :, :3])
-    f_truth.from_numpy(truth[:, :, :3])
+    f_captured.from_numpy(np.ascontiguousarray(captured[:, :, :3]))
+    f_truth.from_numpy(np.ascontiguousarray(truth[:, :, :3]))
 
     pixels = f_captured.shape[0] * f_captured.shape[1]
     if compare == 'rmse':
