@@ -2,7 +2,7 @@
 - path: repos/taichi/python/taichi/examples/rendering/sdf_renderer.py
   args: []
   steps:
-  - frame: 300
+  - frame: 15
     action: capture-and-compare
     compare: sum-difference
     threshold: 5%

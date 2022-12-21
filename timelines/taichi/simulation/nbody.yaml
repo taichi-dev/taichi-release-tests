@@ -2,5 +2,5 @@
 - path: repos/taichi/python/taichi/examples/simulation/nbody.py
   args: []
   steps:
-  - frame: 60
+  - frame: 6
     action: succeed

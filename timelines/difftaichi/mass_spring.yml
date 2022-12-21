@@ -1,9 +1,9 @@
 ---
 - path: repos/difftaichi/examples/mass_spring.py
-  args: ['0', 'train', '--iters=3']
+  args: ['0', 'train', '--iters=1']
   steps:
-  - {frame: 30, action: succeed}
+  - {frame: 5, action: succeed}
 - path: repos/difftaichi/examples/mass_spring.py
-  args: ['0', 'plot', '--iters=3']
+  args: ['0', 'plot', '--iters=1']
   steps:
-  - {frame: 30, action: succeed}
+  - {frame: 5, action: succeed}
