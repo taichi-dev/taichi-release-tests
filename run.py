@@ -200,6 +200,8 @@ def ensure_compiled(orig, self, *args):
 
 def run(test):
     log.info('Running %s...', test['path'])
+    import time
+    b4 = time.time()
     ti.reset()
 
     STATE['ensure_compiled_run'] = False
@@ -237,6 +239,9 @@ def run(test):
 
     for gui in ACTIVE_GGUI:
         gui.destroy()
+
+    af = time.time()
+    log.info('TIME: %s done in %.2fs', test['path'], af - b4)
 
     return True
 
