@@ -5,7 +5,7 @@
   - frame: 15
     action: capture-and-compare
     compare: sum-difference
-    threshold: 5%
+    threshold: 10%
     ground_truth: truths/taichi/rendering/sdf_renderer.png
   - frame: 1
     action: succeed
