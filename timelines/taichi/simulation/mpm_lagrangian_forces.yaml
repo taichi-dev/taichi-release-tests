@@ -2,7 +2,7 @@
 - path: repos/taichi/python/taichi/examples/simulation/mpm_lagrangian_forces.py
   args: []
   steps:
-  - frame: 150
+  - frame: 5
     action: capture-and-compare
     compare: blur-sum-difference
     threshold: '0.01%'

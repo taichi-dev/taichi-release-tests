@@ -2,4 +2,4 @@
 - path: repos/difftaichi/examples/mass_spring_simple.py
   args: []
   steps:
-  - {frame: 30, action: succeed}
+  - {frame: 5, action: succeed}

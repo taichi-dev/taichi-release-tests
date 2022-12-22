@@ -2,21 +2,21 @@
 - path: repos/taichi/python/taichi/examples/autodiff/diff_sph/diff_sph.py
   args: []
   steps:
-  - frame: 30
+  - frame: 5
     action: poke
     function: main
     code: |
       target_centers[current_data_offset][0] = 0.2
       target_centers[current_data_offset][1] = 0.5
       target_centers[current_data_offset][2] = 0.1
-  - frame: 30
+  - frame: 5
     action: poke
     function: main
     code: |
       target_centers[current_data_offset][0] = 0.4
       target_centers[current_data_offset][1] = 0.6
       target_centers[current_data_offset][2] = 0.3
-  - frame: 30
+  - frame: 5
     action: succeed
 # - path: repos/taichi/python/taichi/examples/autodiff/diff_sph/diff_sph.py
 #   args: ['--train']

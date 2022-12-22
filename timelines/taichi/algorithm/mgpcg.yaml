@@ -2,7 +2,7 @@
 - path: repos/taichi/python/taichi/examples/algorithm/mgpcg.py
   args: []
   steps:
-  - frame: 60
+  - frame: 6
     action: capture-and-compare
     compare: sum-difference
     threshold: 0.025%

@@ -1,5 +1,5 @@
 ---
 - path: repos/difftaichi/examples/smoke_taichi_gpu.py
-  args: ['--iters', '10']
+  args: ['--iters', '1']
   steps:
-  - {frame: 30, action: succeed}
+  - {frame: 3, action: succeed}
