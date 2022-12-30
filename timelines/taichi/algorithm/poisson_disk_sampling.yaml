@@ -1,0 +1,5 @@
+---
+- path: repos/taichi/python/taichi/examples/algorithm/poisson_disk_sampling.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}

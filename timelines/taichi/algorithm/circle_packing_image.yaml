@@ -1,0 +1,5 @@
+---
+- path: repos/taichi/python/taichi/examples/algorithm/circle-packing/circle_packing_image.py
+  args: []
+  steps:
+  - {frame: 1, action: succeed}

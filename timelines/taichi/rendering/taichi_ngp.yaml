@@ -1,0 +1,11 @@
+---
+- path: repos/taichi/python/taichi/examples/rendering/taichi_ngp.py
+  args: [--gui]
+  steps:
+  - frame: 120
+    action: capture-and-compare
+    compare: sum-difference
+    threshold: 20%
+    ground_truth: truths/taichi/rendering/taichi_ngp.png
+  - frame: 1
+    action: succeed
