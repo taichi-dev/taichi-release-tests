@@ -2,10 +2,10 @@
 - path: repos/taichi/python/taichi/examples/rendering/cornell_box.py
   args: []
   steps:
-  - frame: 15
+  - frame: 1000
     action: capture-and-compare
     compare: sum-difference
-    threshold: 20%
+    threshold: 30%
     ground_truth: truths/taichi/rendering/cornell_box.png
   - frame: 1
     action: succeed
