@@ -1,6 +1,66 @@
 ---
 - path: repos/taichi/python/taichi/examples/algorithm/marching_squares.py
   args: []
-  args: []
   steps:
-  - {frame: 30, action: succeed}
+  - {frame: 2, action: move, position: [0.273, 0.596]}
+  - {frame: 0, action: move, position: [0.277, 0.6]}
+  - {frame: 1, action: move, position: [0.283, 0.604]}
+  - {frame: 0, action: move, position: [0.299, 0.613]}
+  - {frame: 1, action: move, position: [0.314, 0.625]}
+  - {frame: 0, action: move, position: [0.34, 0.643]}
+  - {frame: 1, action: move, position: [0.365, 0.664]}
+  - {frame: 0, action: move, position: [0.395, 0.689]}
+  - {frame: 1, action: move, position: [0.42, 0.703]}
+  - {frame: 0, action: move, position: [0.461, 0.734]}
+  - {frame: 1, action: move, position: [0.488, 0.75]}
+  - {frame: 0, action: move, position: [0.512, 0.762]}
+  - {frame: 1, action: move, position: [0.529, 0.775]}
+  - {frame: 0, action: move, position: [0.545, 0.783]}
+  - {frame: 1, action: move, position: [0.555, 0.787]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.557, 0.785]}
+  - {frame: 1, action: move, position: [0.561, 0.785]}
+  - {frame: 0, action: move, position: [0.57, 0.781]}
+  - {frame: 1, action: move, position: [0.578, 0.773]}
+  - {frame: 0, action: move, position: [0.596, 0.766]}
+  - {frame: 1, action: move, position: [0.609, 0.758]}
+  - {frame: 0, action: move, position: [0.629, 0.748]}
+  - {frame: 1, action: move, position: [0.637, 0.742]}
+  - {frame: 0, action: move, position: [0.654, 0.734]}
+  - {frame: 1, action: move, position: [0.674, 0.727]}
+  - {frame: 0, action: move, position: [0.689, 0.721]}
+  - {frame: 1, action: move, position: [0.697, 0.715]}
+  - {frame: 0, action: move, position: [0.703, 0.713]}
+  - {frame: 1, action: move, position: [0.713, 0.707]}
+  - {frame: 0, action: move, position: [0.717, 0.703]}
+  - {frame: 1, action: move, position: [0.719, 0.699]}
+  - {frame: 0, action: move, position: [0.721, 0.695]}
+  - {frame: 1, action: move, position: [0.725, 0.691]}
+  - {frame: 0, action: move, position: [0.727, 0.688]}
+  - {frame: 0, action: move, position: [0.727, 0.682]}
+  - {frame: 1, action: move, position: [0.729, 0.678]}
+  - {frame: 0, action: move, position: [0.73, 0.672]}
+  - {frame: 1, action: move, position: [0.73, 0.67]}
+  - {frame: 0, action: move, position: [0.732, 0.666]}
+  - {frame: 1, action: move, position: [0.732, 0.664]}
+  - {frame: 0, action: move, position: [0.732, 0.662]}
+  - {frame: 1, action: move, position: [0.732, 0.66]}
+  - {frame: 3, action: move, position: [0.732, 0.658]}
+  - {frame: 1, action: move, position: [0.73, 0.658]}
+  - {frame: 0, action: move, position: [0.73, 0.656]}
+  - {frame: 1, action: move, position: [0.729, 0.656]}
+  - {frame: 1, action: move, position: [0.729, 0.654]}
+  - {frame: 1, action: move, position: [0.727, 0.654]}
+  - {frame: 0, action: key-down, key: Super_L}
+  - {frame: 0, action: move, position: [0.727, 0.652]}
+  - {frame: 1, action: move, position: [0.725, 0.652]}
+  - {frame: 1, action: move, position: [0.725, 0.65]}
+  - {frame: 1, action: move, position: [0.723, 0.65]}
+  - {frame: 1, action: move, position: [0.723, 0.648]}
+  - {frame: 0, action: move, position: [0.721, 0.648]}
+  - {frame: 1, action: move, position: [0.719, 0.648]}
+  - {frame: 1, action: move, position: [0.717, 0.646]}
+  - {frame: 1, action: move, position: [0.715, 0.646]}
+  - {frame: 1, action: move, position: [0.713, 0.645]}
+  - {frame: 3, action: succeed}
