@@ -240,6 +240,9 @@ def run(test):
     for gui in ACTIVE_GGUI:
         gui.destroy()
 
+    ACTIVE_GUI.clear()
+    ACTIVE_GGUI.clear()
+
     af = time.time()
     log.info('TIME: %s done in %.2fs', test['path'], af - b4)
 
