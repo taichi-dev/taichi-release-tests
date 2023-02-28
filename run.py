@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# --- prioritized ---
+# -- prioritized --
 import os
 os.environ['TI_GUI_FAST'] = '0'
 os.environ['MPLBACKEND'] = 'agg'
@@ -14,6 +14,7 @@ import logging
 import platform
 import random
 import sys
+import tempfile
 
 # -- third party --
 import numpy as np
@@ -224,7 +225,17 @@ def run(test):
     os.chdir(wd)
     sys.path.insert(0, str(wd))
     try:
-        spec.loader.exec_module(module)
+        if not options.use_stale_offline_cache:
+            with tempfile.TemporaryDirectory(prefix='ti-release-tests-offline-cache-') as d:
+                try:
+                    orig = os.environ.get('TI_OFFLINE_CACHE_FILE_PATH')
+                    os.environ['TI_OFFLINE_CACHE_FILE_PATH'] = d
+                    spec.loader.exec_module(module)
+                finally:
+                    if orig:
+                        os.environ['TI_OFFLINE_CACHE_FILE_PATH'] = orig
+        else:
+            spec.loader.exec_module(module)
     except Success:
         pass
     except BaseException:
