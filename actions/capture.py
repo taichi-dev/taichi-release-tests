@@ -101,7 +101,7 @@ def capture(gui, path):
         return
 
     if isinstance(gui, ti.ui.Window):
-        gui.write_image(str(path))
+        gui.save_image(str(path))
     elif isinstance(gui, ti.GUI):
         gui.core.screenshot(str(path))
     elif ismodule(gui, 'matplotlib.pyplot'):
