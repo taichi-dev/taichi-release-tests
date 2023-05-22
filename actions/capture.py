@@ -93,6 +93,16 @@ def gaussian_blur(a: ti.template(), aux: ti.template()):
         a[i, j] = ti.cast(acc, ti.i16)
 
 
+@ti.kernel
+def naive_downscale(img: ti.types.ndarray(dtype=ti.math.vec4), downscaled: ti.types.ndarray(dtype=ti.math.vec4)):
+    for i, j in downscaled:
+        acc = ti.Vector([0.0, 0.0, 0.0, 0.0])
+        for k in ti.static(range(2)):
+            for l in ti.static(range(2)):
+                acc += img[i * 2 + k, j * 2 + l]
+        downscaled[i, j] = ti.cast(acc / 4, ti.u8)
+
+
 ismodule = lambda obj, name: isinstance(obj, types.ModuleType) and obj.__name__ == name
 
 # -- code --
@@ -147,7 +157,13 @@ def capture_and_compare(dry, gui, compare, ground_truth, threshold):
 
     captured = ti.tools.imread(str(td / 'capture.png'))
     truth = ti.tools.imread(str(truth_path))
-    if captured.shape != truth.shape:
+    if list(captured.shape[:2]) == [i * 2 for i in truth.shape[:2]]:
+        # retina, downscale first
+        captured = np.ascontiguousarray(captured)
+        downscaled = np.ascontiguousarray(np.zeros_like(truth))
+        naive_downscale(captured, downscaled)
+        captured = downscaled
+    elif captured.shape != truth.shape:
         save_bad_compare()
         raise Failed('capture-and-compare shape mismatch!')
 
