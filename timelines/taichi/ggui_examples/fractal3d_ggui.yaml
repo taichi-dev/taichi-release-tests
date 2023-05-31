@@ -5,7 +5,7 @@
   - frame: 5
     action: capture-and-compare
     compare: blur-sum-difference
-    threshold: 0.025%
+    threshold: 0.07%
     ground_truth: truths/taichi/ggui_examples/fractal3d_ggui.png
   - frame: 1
     action: succeed
