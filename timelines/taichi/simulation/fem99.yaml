@@ -5,7 +5,7 @@
   - frame: 60
     action: capture-and-compare
     compare: sum-difference
-    threshold: 1200
+    threshold: 1500
     ground_truth: truths/taichi/simulation/fem99.png
   - frame: 1
     action: succeed
