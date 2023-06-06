@@ -1,0 +1,155 @@
+---
+- path: repos/games201/mass_spring_explicit.py
+  args: []
+  steps:
+  - {frame: 1, action: move, position: [0.561, 0.812]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.781, 1.04]}
+  - {frame: 0, action: mouse-up, key: LMB}
+  - {frame: 2, action: move, position: [0.77, 0.0918]}
+  - {frame: 0, action: mouse-down, key: LMB}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.688, 0.082]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.688, 0.0801]}
+  - {frame: 8, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.617, 0.0352]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.615, 0.0352]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.557, 0.0605]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.555, 0.0605]}
+  - {frame: 3, action: mouse-down, key: LMB}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.459, 0.0879]}
+  - {frame: 4, action: mouse-down, key: LMB}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.436, 0.156]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.568, 0.168]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.57, 0.168]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 8, action: mouse-up, key: LMB}
+  - {frame: 4, action: move, position: [0.617, 0.219]}
+  - {frame: 1, action: move, position: [0.48, 0.219]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 4, action: move, position: [0.477, 0.219]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 1, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.434, 0.301]}
+  - {frame: 4, action: mouse-down, key: LMB}
+  - {frame: 8, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.514, 0.301]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.607, 0.301]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 8, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.715, 0.297]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.717, 0.297]}
+  - {frame: 1, action: move, position: [0.389, 0.297]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 7, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.314, 0.266]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.299, 0.123]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 8, action: mouse-up, key: LMB}
+  - {frame: 2, action: move, position: [0.266, 0.137]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.266, 0.24]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 9, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.328, 0.309]}
+  - {frame: 2, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.33, 0.309]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.498, 0.348]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 0, action: move, position: [0.5, 0.348]}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 0, action: move, position: [0.502, 0.348]}
+  - {frame: 1, action: mouse-down, key: RMB}
+  - {frame: 6, action: mouse-up, key: RMB}
+  - {frame: 1, action: mouse-down, key: RMB}
+  - {frame: 5, action: mouse-up, key: RMB}
+  - {frame: 1, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 8, action: mouse-down, key: RMB}
+  - {frame: 5, action: mouse-up, key: RMB}
+  - {frame: 7, action: mouse-down, key: LMB}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 9, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 5, action: mouse-up, key: LMB}
+  - {frame: 7, action: move, position: [0.498, 0.348]}
+  - {frame: 4, action: mouse-down, key: LMB}
+  - {frame: 6, action: mouse-up, key: LMB}
+  - {frame: 1, action: move, position: [0.432, 0.352]}
+  - {frame: 3, action: mouse-down, key: LMB}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 2, action: key-down, key: y}
+  - {frame: 5, action: key-up, key: y}
+  - {frame: 5, action: key-down, key: d}
+  - {frame: 1, action: key-up, key: d}
+  - {frame: 1, action: key-down, key: x}
+  - {frame: 3, action: key-up, key: x}
+  - {frame: 1, action: move, position: [0.352, 0.432]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 4, action: mouse-up, key: LMB}
+  - {frame: 8, action: mouse-down, key: LMB}
+  - {frame: 5, action: mouse-up, key: LMB}
+  - {frame: 3, action: move, position: [0.352, 0.436]}
+  - {frame: 2, action: mouse-down, key: RMB}
+  - {frame: 6, action: mouse-up, key: RMB}
+  - {frame: 1, action: mouse-down, key: RMB}
+  - {frame: 5, action: mouse-up, key: RMB}
+  - {frame: 7, action: mouse-down, key: RMB}
+  - {frame: 3, action: mouse-up, key: RMB}
+  - {frame: 5, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 5, action: mouse-down, key: RMB}
+  - {frame: 5, action: mouse-up, key: RMB}
+  - {frame: 5, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 5, action: mouse-down, key: RMB}
+  - {frame: 5, action: mouse-up, key: RMB}
+  - {frame: 1, action: mouse-down, key: RMB}
+  - {frame: 7, action: mouse-up, key: RMB}
+  - {frame: 5, action: mouse-down, key: RMB}
+  - {frame: 5, action: mouse-up, key: RMB}
+  - {frame: 5, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 6, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 4, action: mouse-down, key: RMB}
+  - {frame: 5, action: mouse-up, key: RMB}
+  - {frame: 6, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 1, action: key-down, key: ' '}
+  - {frame: 2, action: key-up, key: ' '}
+  - {frame: 2, action: key-down, key: ' '}
+  - {frame: 4, action: key-up, key: ' '}
+  - {frame: 2, action: mouse-down, key: RMB}
+  - {frame: 5, action: mouse-up, key: RMB}
+  - {frame: 5, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 6, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 6, action: mouse-down, key: RMB}
+  - {frame: 4, action: mouse-up, key: RMB}
+  - {frame: 4, action: key-down, key: c}
+  - {frame: 1, action: key-up, key: c}
+  - {frame: 7, action: key-down, key: Escape}
+  - {frame: 3, action: succeed}
