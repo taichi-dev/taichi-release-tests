@@ -181,6 +181,9 @@ def is_pressed(orig, self, *keys):
 def run(program, args, output):
     global OUTPUT
 
+    program = pathlib.Path(program).resolve()
+    assert program.exists()
+
     ti.reset()
 
     path = pathlib.Path(output)
@@ -204,13 +207,14 @@ def run(program, args, output):
     assert spec.loader
     module = importlib.util.module_from_spec(spec)
     sys.argv = [program] + args
-    wd = pathlib.Path(program).resolve().parent
+    wd = program.parent
     orig = os.getcwd()
     try:
         os.chdir(wd)
         spec.loader.exec_module(module)
     except BaseException:
-        pass
+        import traceback
+        traceback.print_exc()
     finally:
         os.chdir(orig)
 
