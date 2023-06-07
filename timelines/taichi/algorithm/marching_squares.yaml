@@ -1,6 +1,5 @@
 ---
 - path: repos/taichi/python/taichi/examples/algorithm/marching_squares.py
   args: []
-  args: []
   steps:
   - {frame: 30, action: succeed}
