@@ -151,5 +151,4 @@
   - {frame: 4, action: mouse-up, key: RMB}
   - {frame: 4, action: key-down, key: c}
   - {frame: 1, action: key-up, key: c}
-  - {frame: 7, action: key-down, key: Escape}
   - {frame: 3, action: succeed}
