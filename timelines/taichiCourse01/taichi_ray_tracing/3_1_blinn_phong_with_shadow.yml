@@ -1,0 +1,5 @@
+---
+- path: repos/taichi_ray_tracing/3_1_blinn_phong_with_shadow.py
+  args: []
+  steps:
+  - {frame: 1, action: succeed}

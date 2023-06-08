@@ -1,0 +1,5 @@
+---
+- path: repos/taichi_ray_tracing/3_2_whitted_style_ray_tracing.py
+  args: []
+  steps:
+  - {frame: 1, action: succeed}

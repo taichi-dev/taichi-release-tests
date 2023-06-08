@@ -1,0 +1,9 @@
+---
+- path: repos/--Deformables/implicit_mass_spring_system.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}
+- path: repos/taichiCourse01/--Deformables/implicit_mass_spring_system.py
+  args: ['-cg']
+  steps:
+  - {frame: 30, action: succeed}

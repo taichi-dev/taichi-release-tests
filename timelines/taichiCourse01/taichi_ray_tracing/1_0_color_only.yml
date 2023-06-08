@@ -1,0 +1,5 @@
+---
+- path: repos/taichi_ray_tracing/1_0_color_only.py
+  args: []
+  steps:
+  - {frame: 1, action: succeed}

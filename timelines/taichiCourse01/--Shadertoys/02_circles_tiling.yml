@@ -1,0 +1,5 @@
+---
+- path: repos/--Shadertoys/02_circles_tiling.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}

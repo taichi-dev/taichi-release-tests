@@ -1,0 +1,5 @@
+---
+- path: repos/--Shadertoys/04_pretty_hip.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}

@@ -1,0 +1,17 @@
+---
+- path: repos/--Deformables/mass-spring-explicit.py
+  args: []
+  steps:
+  - {frame: 1, action: key-down, key: ' '}
+  - {frame: 1, action: key-up, key: ' '}
+  - {frame: 1, action: move, position: [0.647, 0.594]}
+  - {frame: 1, action: mouse-down, key: LMB}
+  - {frame: 1, action: move, position: [0.645, 0.594]}
+  - {frame: 1, action: move, position: [0.641, 0.594]}
+  - {frame: 1, action: move, position: [0.637, 0.594]}
+  - {frame: 1, action: move, position: [0.632, 0.594]}
+  - {frame: 1, action: move, position: [0.627, 0.594]}
+  - {frame: 1, action: mouse-up, key: LMB}
+  - {frame: 1, action: key-down, key: d}
+  - {frame: 1, action: key-up, key: d}
+  - {frame: 1, action: succeed}
