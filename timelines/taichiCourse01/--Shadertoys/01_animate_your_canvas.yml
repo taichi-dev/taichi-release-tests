@@ -1,0 +1,5 @@
+---
+- path: repos/--Shadertoys/01_animate_your_canvas.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}

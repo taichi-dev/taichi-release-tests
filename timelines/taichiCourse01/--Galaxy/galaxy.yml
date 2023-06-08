@@ -1,0 +1,5 @@
+---
+- path: repos/--Galaxy/galaxy.py
+  args: []
+  steps:
+  - {frame: 30, action: succeed}
