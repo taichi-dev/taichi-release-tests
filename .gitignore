@@ -7,3 +7,4 @@ imgui.ini
 layout.pdf
 results/
 *.bad.png
+.DS_Store
