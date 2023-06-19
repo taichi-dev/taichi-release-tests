@@ -1,5 +1,0 @@
----
-- path: repos/taichi_sph/demo.py
-  args: []
-  steps:
-  - {frame: 1, action: succeed}
