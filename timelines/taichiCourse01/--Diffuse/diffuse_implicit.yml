@@ -1,7 +1,0 @@
----
-- path: repos/--Diffuse/diffuse_implicit.py
-  args: []
-  steps:
-    - {frame: 20, action: key-down, key: ' '}
-    - {frame: 20, action: key-up, key: ' '}
-    - {frame: 1, action: succeed}
